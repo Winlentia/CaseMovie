@@ -15,12 +15,19 @@ class NetworkService {
         }
         
         AF.request(request)
-            .responseDecodable (decoder: JSONDecoder()) { (response: DataResponse<T, AFError>) in
+            .responseDecodable (decoder: SnakeCaseJSONDecoder()) { (response: DataResponse<T, AFError>) in
                 completion(response.result)
                 if request.blocks {
                     // stop loading
                 }
             }
         
+    }
+}
+
+final class SnakeCaseJSONDecoder: JSONDecoder {
+    override init() {
+        super.init()
+        super.keyDecodingStrategy = .convertFromSnakeCase
     }
 }
