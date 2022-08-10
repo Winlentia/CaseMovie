@@ -1,0 +1,6 @@
+framework module Pods_CaseMovie_CaseMovieUITests {
+  umbrella header "Pods-CaseMovie-CaseMovieUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
