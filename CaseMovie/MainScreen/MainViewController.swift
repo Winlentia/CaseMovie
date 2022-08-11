@@ -21,10 +21,12 @@ class MainViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        self.view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .blue
+        tableView.contentInsetAdjustmentBehavior = .never
         tableView.registerCell(type: PopularMovieTableViewCell.self)
         return tableView
     }()

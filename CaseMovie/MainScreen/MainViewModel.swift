@@ -29,6 +29,7 @@ class MainViewModel {
                 self.popularMovieData.append(contentsOf: popularMovies)
                 self.reloadCompletion?()
             case .failure(let error):
+                //TODO: handle failure
                 print(error)
             }
         }
