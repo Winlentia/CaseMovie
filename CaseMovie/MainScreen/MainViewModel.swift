@@ -8,18 +8,24 @@
 import Foundation
 
 class MainViewModel {
-    let movieService: MovieServiceProtocol
+    private let movieService: MovieServiceProtocol
     
-    var currentPage = 1
+    private var currentPage = 1
+    
+    private var isPaginationCompleted: Bool = false
     
     var popularMovieData: [Movie] = []
     
     init(movieService: MovieServiceProtocol) {
         self.movieService = movieService
     }
+    
     var reloadCompletion: (() -> Void)?
     
     func fetchMovies() {
+        if isPaginationCompleted {
+            return
+        }
         movieService.getPopularMovies(pageId: currentPage) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -27,6 +33,11 @@ class MainViewModel {
                 print(response)
                 guard let popularMovies = response.results else { return }
                 self.popularMovieData.append(contentsOf: popularMovies)
+                if let totalPage = response.totalPages, totalPage > self.currentPage {
+                    self.currentPage += 1
+                } else {
+                    self.isPaginationCompleted = true
+                }
                 self.reloadCompletion?()
             case .failure(let error):
                 //TODO: handle failure
@@ -34,4 +45,5 @@ class MainViewModel {
             }
         }
     }
+    
 }

@@ -86,6 +86,11 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row > viewModel.popularMovieData.count - 5 {
+            viewModel.fetchMovies()
+        }
+    }
 }
 
 extension MainViewController: UISearchBarDelegate {
