@@ -32,6 +32,7 @@
 		78C5C64028A5954F005794F6 /* PopularMovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C63F28A5954F005794F6 /* PopularMovieTableViewModel.swift */; };
 		78C5C64228A5978A005794F6 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C64128A5978A005794F6 /* UITableView+Extensions.swift */; };
 		78C5C64428A5979E005794F6 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C64328A5979E005794F6 /* UITableViewCell+Extensions.swift */; };
+		78C5C64628A59EC0005794F6 /* Kingfisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C64528A59EC0005794F6 /* Kingfisher+Extensions.swift */; };
 		F70548AD490382F81CE90A6C /* Pods_CaseMovieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CBD10F5C15D0C9B0470C82 /* Pods_CaseMovieTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		78C5C63F28A5954F005794F6 /* PopularMovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableViewModel.swift; sourceTree = "<group>"; };
 		78C5C64128A5978A005794F6 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		78C5C64328A5979E005794F6 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		78C5C64528A59EC0005794F6 /* Kingfisher+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kingfisher+Extensions.swift"; sourceTree = "<group>"; };
 		9F7DE640444B46F5D932BEB9 /* Pods-CaseMovie-CaseMovieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaseMovie-CaseMovieUITests.release.xcconfig"; path = "Target Support Files/Pods-CaseMovie-CaseMovieUITests/Pods-CaseMovie-CaseMovieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A4633CADA857E1E7CEC1DC0C /* Pods-CaseMovieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaseMovieTests.debug.xcconfig"; path = "Target Support Files/Pods-CaseMovieTests/Pods-CaseMovieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBD09038257152BAD76DBF10 /* Pods-CaseMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaseMovie.release.xcconfig"; path = "Target Support Files/Pods-CaseMovie/Pods-CaseMovie.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				788F6F2728A44F6800F0D0B4 /* Codable+Extensions.swift */,
 				78C5C64128A5978A005794F6 /* UITableView+Extensions.swift */,
 				78C5C64328A5979E005794F6 /* UITableViewCell+Extensions.swift */,
+				78C5C64528A59EC0005794F6 /* Kingfisher+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				788F6EF628A44D7600F0D0B4 /* ViewController.swift in Sources */,
 				788F6F3A28A4648F00F0D0B4 /* MovieDetailRequest.swift in Sources */,
 				788F6F2428A44F1000F0D0B4 /* NetworkRequest.swift in Sources */,
+				78C5C64628A59EC0005794F6 /* Kingfisher+Extensions.swift in Sources */,
 				78C5C64428A5979E005794F6 /* UITableViewCell+Extensions.swift in Sources */,
 				78C5C64228A5978A005794F6 /* UITableView+Extensions.swift in Sources */,
 				788F6F2528A44F1000F0D0B4 /* NetworkService.swift in Sources */,

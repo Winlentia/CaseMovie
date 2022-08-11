@@ -17,4 +17,9 @@ class PopularMovieTableViewModel {
     var title: String {
         movie.title ?? ""
     }
+    
+    var imageUrl: String {
+        let imagePath = movie.posterPath ?? ""
+        return "https://image.tmdb.org/t/p/w200/\(imagePath)"
+    }
 }
