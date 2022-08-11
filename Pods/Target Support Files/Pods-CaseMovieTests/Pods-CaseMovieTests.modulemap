@@ -1,6 +1,0 @@
-framework module Pods_CaseMovieTests {
-  umbrella header "Pods-CaseMovieTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
