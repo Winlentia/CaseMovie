@@ -30,7 +30,6 @@ class MainViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                print(response)
                 guard let popularMovies = response.results else { return }
                 self.popularMovieData.append(contentsOf: popularMovies)
                 if let totalPage = response.totalPages, totalPage > self.currentPage {

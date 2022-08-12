@@ -13,36 +13,78 @@ class PopularMovieTableViewCell: UITableViewCell {
     
     var viewModel : PopularMovieTableViewModel?
     
+    lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(stackView)
+        stackView.alignment = .center
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+        return stackView
+    }()
+    
+    lazy var descriptionStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        return stackView
+    }()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.font = .appBoldFont
+        contentView.addSubview(label)
+        return label
+    }()
+    
+    lazy var releaseDate: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .appMainFont
+        contentView.addSubview(label)
+        return label
+    }()
+    
+    lazy var scoreLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .appMainFont
         contentView.addSubview(label)
         return label
     }()
     
     lazy var posterImage: UIImageView = {
         let imageView = UIImageView()
-        contentView.addSubview(imageView)
+        mainStackView.addSubview(imageView)
         return imageView
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        posterImage.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(8)
-            make.top.equalToSuperview().offset(8)
-            make.bottom.equalToSuperview().inset(8)
-            make.width.equalTo(200)
-            make.height.equalTo(300)
+        self.accessoryType = .disclosureIndicator
+        
+        mainStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(8)
         }
         
-        titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(posterImage.snp.trailing).offset(8)
-            make.top.equalToSuperview().offset(8)
-            make.trailing.equalToSuperview().offset(8)
+        posterImage.snp.makeConstraints { make in
+            make.width.equalTo(100)
+            make.height.equalTo(150)
         }
+        
+        mainStackView.addArrangedSubview(posterImage)
+        mainStackView.addArrangedSubview(descriptionStackView)
+        
+        descriptionStackView.addArrangedSubview(titleLabel)
+        descriptionStackView.addArrangedSubview(releaseDate)
+        descriptionStackView.addArrangedSubview(scoreLabel)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -53,6 +95,8 @@ class PopularMovieTableViewCell: UITableViewCell {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title
         posterImage.setImage(withUrl: viewModel.imageUrl)
+        releaseDate.text = viewModel.releaseDate
+        scoreLabel.text = viewModel.scoreLabel
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

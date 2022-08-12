@@ -28,6 +28,7 @@
 		788F6F3A28A4648F00F0D0B4 /* MovieDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F3928A4648F00F0D0B4 /* MovieDetailRequest.swift */; };
 		788F6F3E28A57AA600F0D0B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F3D28A57AA600F0D0B4 /* MainViewController.swift */; };
 		788F6F4028A57AAE00F0D0B4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F3F28A57AAE00F0D0B4 /* MainViewModel.swift */; };
+		78BE8D7D28A69A3E00C35849 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE8D7C28A69A3E00C35849 /* UIFont+Extensions.swift */; };
 		78C5C63E28A5951A005794F6 /* PopularMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C63D28A5951A005794F6 /* PopularMovieTableViewCell.swift */; };
 		78C5C64028A5954F005794F6 /* PopularMovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C63F28A5954F005794F6 /* PopularMovieTableViewModel.swift */; };
 		78C5C64228A5978A005794F6 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C64128A5978A005794F6 /* UITableView+Extensions.swift */; };
@@ -81,6 +82,7 @@
 		788F6F3928A4648F00F0D0B4 /* MovieDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRequest.swift; sourceTree = "<group>"; };
 		788F6F3D28A57AA600F0D0B4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		788F6F3F28A57AAE00F0D0B4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		78BE8D7C28A69A3E00C35849 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		78C5C63D28A5951A005794F6 /* PopularMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableViewCell.swift; sourceTree = "<group>"; };
 		78C5C63F28A5954F005794F6 /* PopularMovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableViewModel.swift; sourceTree = "<group>"; };
 		78C5C64128A5978A005794F6 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				78C5C64128A5978A005794F6 /* UITableView+Extensions.swift */,
 				78C5C64328A5979E005794F6 /* UITableViewCell+Extensions.swift */,
 				78C5C64528A59EC0005794F6 /* Kingfisher+Extensions.swift */,
+				78BE8D7C28A69A3E00C35849 /* UIFont+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				788F6F2828A44F6800F0D0B4 /* Codable+Extensions.swift in Sources */,
 				788F6EF228A44D7600F0D0B4 /* AppDelegate.swift in Sources */,
 				788F6F3028A4589900F0D0B4 /* MovieDetail.swift in Sources */,
+				78BE8D7D28A69A3E00C35849 /* UIFont+Extensions.swift in Sources */,
 				788F6F3728A4616D00F0D0B4 /* MovieService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
