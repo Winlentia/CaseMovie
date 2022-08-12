@@ -27,6 +27,7 @@ class PopularMovieTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
+        stackView.alignment = .leading
         stackView.spacing = 8
         return stackView
     }()
@@ -58,7 +59,7 @@ class PopularMovieTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var posterImage: UIImageView = {
+    lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
         mainStackView.addSubview(imageView)
         return imageView
@@ -69,22 +70,26 @@ class PopularMovieTableViewCell: UITableViewCell {
         
         self.accessoryType = .disclosureIndicator
         
-        mainStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(8)
-        }
+        setupConstraints()
         
-        posterImage.snp.makeConstraints { make in
-            make.width.equalTo(100)
-            make.height.equalTo(150)
-        }
-        
-        mainStackView.addArrangedSubview(posterImage)
+        mainStackView.addArrangedSubview(posterImageView)
         mainStackView.addArrangedSubview(descriptionStackView)
         
         descriptionStackView.addArrangedSubview(titleLabel)
         descriptionStackView.addArrangedSubview(releaseDate)
         descriptionStackView.addArrangedSubview(scoreLabel)
         
+    }
+    
+    fileprivate func setupConstraints() {
+        mainStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(8)
+        }
+        
+        posterImageView.snp.makeConstraints { make in
+            make.width.equalTo(100)
+            make.height.equalTo(150)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -94,7 +99,7 @@ class PopularMovieTableViewCell: UITableViewCell {
     func configureCell(viewModel: PopularMovieTableViewModel){
         self.viewModel = viewModel
         titleLabel.text = viewModel.title
-        posterImage.setImage(withUrl: viewModel.imageUrl)
+        posterImageView.setImage(withUrl: viewModel.imageUrl)
         releaseDate.text = viewModel.releaseDate
         scoreLabel.text = viewModel.scoreLabel
     }

@@ -29,6 +29,8 @@
 		788F6F3E28A57AA600F0D0B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F3D28A57AA600F0D0B4 /* MainViewController.swift */; };
 		788F6F4028A57AAE00F0D0B4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F3F28A57AAE00F0D0B4 /* MainViewModel.swift */; };
 		78BE8D7D28A69A3E00C35849 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE8D7C28A69A3E00C35849 /* UIFont+Extensions.swift */; };
+		78BE8D8028A6F07B00C35849 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE8D7F28A6F07B00C35849 /* MovieDetailViewController.swift */; };
+		78BE8D8428A6F09700C35849 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BE8D8328A6F09700C35849 /* MovieDetailViewModel.swift */; };
 		78C5C63E28A5951A005794F6 /* PopularMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C63D28A5951A005794F6 /* PopularMovieTableViewCell.swift */; };
 		78C5C64028A5954F005794F6 /* PopularMovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C63F28A5954F005794F6 /* PopularMovieTableViewModel.swift */; };
 		78C5C64228A5978A005794F6 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C64128A5978A005794F6 /* UITableView+Extensions.swift */; };
@@ -83,6 +85,8 @@
 		788F6F3D28A57AA600F0D0B4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		788F6F3F28A57AAE00F0D0B4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		78BE8D7C28A69A3E00C35849 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		78BE8D7F28A6F07B00C35849 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		78BE8D8328A6F09700C35849 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		78C5C63D28A5951A005794F6 /* PopularMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableViewCell.swift; sourceTree = "<group>"; };
 		78C5C63F28A5954F005794F6 /* PopularMovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableViewModel.swift; sourceTree = "<group>"; };
 		78C5C64128A5978A005794F6 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -148,7 +152,7 @@
 		788F6EF028A44D7600F0D0B4 /* CaseMovie */ = {
 			isa = PBXGroup;
 			children = (
-				788F6F3B28A57A8000F0D0B4 /* MainScreen */,
+				78BE8D7E28A6F05B00C35849 /* Screens */,
 				788F6F2C28A4556300F0D0B4 /* Models */,
 				788F6F2928A44F9400F0D0B4 /* Common */,
 				788F6F2628A44F5600F0D0B4 /* Extensions */,
@@ -237,6 +241,24 @@
 				788F6F3F28A57AAE00F0D0B4 /* MainViewModel.swift */,
 			);
 			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		78BE8D7E28A6F05B00C35849 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				788F6F3B28A57A8000F0D0B4 /* MainScreen */,
+				78BE8D8128A6F08000C35849 /* MovieDetail */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		78BE8D8128A6F08000C35849 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				78BE8D7F28A6F07B00C35849 /* MovieDetailViewController.swift */,
+				78BE8D8328A6F09700C35849 /* MovieDetailViewModel.swift */,
+			);
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 		78C5C63C28A594FE005794F6 /* Cell */ = {
@@ -513,7 +535,9 @@
 				788F6F3E28A57AA600F0D0B4 /* MainViewController.swift in Sources */,
 				788F6F2E28A4556C00F0D0B4 /* Movie.swift in Sources */,
 				78C5C63E28A5951A005794F6 /* PopularMovieTableViewCell.swift in Sources */,
+				78BE8D8028A6F07B00C35849 /* MovieDetailViewController.swift in Sources */,
 				78C5C64028A5954F005794F6 /* PopularMovieTableViewModel.swift in Sources */,
+				78BE8D8428A6F09700C35849 /* MovieDetailViewModel.swift in Sources */,
 				788F6EF628A44D7600F0D0B4 /* ViewController.swift in Sources */,
 				788F6F3A28A4648F00F0D0B4 /* MovieDetailRequest.swift in Sources */,
 				788F6F2428A44F1000F0D0B4 /* NetworkRequest.swift in Sources */,

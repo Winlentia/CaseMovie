@@ -23,7 +23,7 @@ struct MovieDetailResponse: Codable {
     let originalLanguage: String?
     let originalTitle: String?
     let overview: String?
-    let popularity: String?
+    let popularity: Double?
     let posterPath: String?
     let releaseDate: String?
     let video: Bool?

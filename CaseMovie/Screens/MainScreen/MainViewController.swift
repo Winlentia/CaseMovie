@@ -36,12 +36,12 @@ class MainViewController: UIViewController {
         
         title = "Movie"
         view.backgroundColor = .yellow
-        configureUI()
+        setupUI()
         bindViewModel()
         viewModel.fetchMovies()
     }
     
-    func configureUI() {
+    func setupUI() {
         setupTableView()
         
         setupSearchBar()
@@ -80,11 +80,15 @@ extension MainViewController: UITableViewDataSource {
         cell.configureCell(viewModel: .init(movie: viewModel.popularMovieData[indexPath.row]))
         return cell
     }
-    
-    
 }
 
 extension MainViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let movieId = viewModel.popularMovieData[indexPath.row].id {
+            self.navigationController?.pushViewController(MovieDetailViewController(viewModel: .init(movieId: movieId)), animated: true)
+        }
+    }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row > viewModel.popularMovieData.count - 5 {
