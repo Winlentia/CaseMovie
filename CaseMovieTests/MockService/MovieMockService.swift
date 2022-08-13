@@ -14,8 +14,13 @@ class MovieMockService: MovieServiceProtocol {
     }
     
     func getMovieDetail(id: Int, completion: @escaping (Result<MovieDetailResponse, AFError>) -> Void) {
-        let movieDetail: MovieDetailResponse = MovieDetailResponse.loadFromJsonString(string: TestConstants.MockStrings.movieDetail)
-        completion(.success(movieDetail))
+        if id == 361743 {
+            let movieDetail: MovieDetailResponse = MovieDetailResponse.loadFromJsonString(string: TestConstants.MockStrings.movieDetail)
+            completion(.success(movieDetail))
+        } else {
+           completion(.failure(AFError.responseSerializationFailed(reason: .inputFileNil)))
+                    
+        }
     }
     
     

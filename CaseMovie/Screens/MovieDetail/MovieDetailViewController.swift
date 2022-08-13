@@ -36,6 +36,21 @@ class MovieDetailViewController: UIViewController {
         return stackView
     }()
     
+    lazy var detailStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .leading
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        return stackView
+    }()
+    
+    lazy var detailContainerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -105,10 +120,21 @@ class MovieDetailViewController: UIViewController {
             make.height.equalTo(view).multipliedBy(0.6)
         }
         
-        mainStackView.addArrangedSubview(titleLabel)
-        mainStackView.addArrangedSubview(subTitleLabel)
-        mainStackView.addArrangedSubview(scoreAndBudgetLabel)
-        mainStackView.addArrangedSubview(descriptionLabel)
+        mainStackView.addArrangedSubview(detailContainerView)
+        
+        detailContainerView.addSubview(detailStackView)
+        detailContainerView.snp.makeConstraints { make in
+            make.width.equalTo(view)
+        }
+        
+        detailStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(8)
+        }
+        
+        detailStackView.addArrangedSubview(titleLabel)
+        detailStackView.addArrangedSubview(subTitleLabel)
+        detailStackView.addArrangedSubview(scoreAndBudgetLabel)
+        detailStackView.addArrangedSubview(descriptionLabel)
     }
     
     fileprivate func bindViewModel() {

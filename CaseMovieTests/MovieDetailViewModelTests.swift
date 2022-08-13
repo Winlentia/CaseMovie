@@ -9,7 +9,6 @@ import XCTest
 
 class MovieDetailViewModelTests: XCTestCase {
     
-    let viewModel = MovieDetailViewModel(movieId: 361743, service: MovieMockService())
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,21 +18,21 @@ class MovieDetailViewModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    
-    func testNavigationTitle() throws {
+    func testViewModelVariables() throws {
+        let viewModel = MovieDetailViewModel(movieId: 361743, service: MovieMockService())
         XCTAssertEqual(viewModel.navigationTitle, "Top Gun: Maverick")
-    }
-    
-    func testSubtitle() throws {
         XCTAssertEqual(viewModel.subTitle, "2022 | 2h 11m | Action, Drama")
-    }
-    
-    func testTitle() throws {
         XCTAssertEqual(viewModel.title, "Top Gun: Maverick")
+        XCTAssertEqual(viewModel.description, "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.")
     }
     
-    func testDescription() throws {
-        XCTAssertEqual(viewModel.description, "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.")
+    func testInvalidViewModel() throws {
+        let viewModel = MovieDetailViewModel(movieId: 1234, service: MovieMockService())
+        XCTAssertEqual(viewModel.navigationTitle, "")
+        XCTAssertEqual(viewModel.subTitle, "")
+        XCTAssertEqual(viewModel.title, "")
+        XCTAssertEqual(viewModel.description, "")
+        
     }
 
     func testExample() throws {
