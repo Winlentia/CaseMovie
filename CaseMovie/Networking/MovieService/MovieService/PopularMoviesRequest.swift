@@ -14,7 +14,7 @@ final class PopularMoviesRequest: NetworkRequest {
     }
 }
 
-struct PopularMoviesResponse: Codable {
+struct MoviesResponse: Codable {
     let page: Int?
     let results: [Movie]?
     let totalPages: Int?

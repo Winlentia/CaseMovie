@@ -10,14 +10,17 @@ import Foundation
 class MainViewModel {
     private let movieService: MovieServiceProtocol
     
+    private let searchService: SearchServiceProtocol
+    
     private var currentPage = 1
     
     private var isPaginationCompleted: Bool = false
     
     var popularMovieData: [Movie] = []
     
-    init(movieService: MovieServiceProtocol) {
+    init(movieService: MovieServiceProtocol = MovieService(), searchService: SearchServiceProtocol = SearchService()){
         self.movieService = movieService
+        self.searchService = searchService
     }
     
     var reloadCompletion: (() -> Void)?
@@ -42,6 +45,40 @@ class MainViewModel {
                 //TODO: handle failure
                 print(error)
             }
+        }
+    }
+    
+    func search(query: String){
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        searchService.searchMovies(query: query.getSearchQuery()) { result in
+            switch result {
+            case .success(let response):
+                dispatchGroup.leave()
+                print(response)
+                print("Winlentia movieSearch Complete")
+            case .failure(let error):
+                dispatchGroup.leave()
+                print(error)
+            }
+        }
+        
+        dispatchGroup.enter()
+        searchService.searchActors(query: query.getSearchQuery()) { result in
+            switch result {
+            case .success(let response):
+                dispatchGroup.leave()
+                print(response)
+                print("Winlentia actors Complete")
+            case .failure(let error):
+                dispatchGroup.leave()
+                print(error)
+            }
+        }
+        dispatchGroup.notify(queue: .main) {
+            print("Winlentia Notify")
+            self.reloadCompletion?()
         }
     }
     

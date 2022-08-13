@@ -10,11 +10,12 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
-    var viewModel = MainViewModel(movieService: MovieService())
+    var viewModel = MainViewModel()
+    private var searchWorkItem: DispatchWorkItem?
     
     lazy var searchController: UISearchController = {
         let searchController = UISearchController()
-        searchController.searchBar.placeholder = "Search Movie or Actorstruct"
+        searchController.searchBar.placeholder = "Search Movie or Actor"
         searchController.searchBar.delegate = self
         return searchController
     }()
@@ -100,7 +101,20 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-    }
+        searchWorkItem?.cancel()
+
+                // Wrap our request in a work item
+        let requestWorkItem = DispatchWorkItem { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.search(query: searchText)
+            print("requestActivated")
+        }
+
+        // Save the new work item and execute it after 250 ms
+        searchWorkItem = requestWorkItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300),
+                                      execute: requestWorkItem)
+        }
 }
 
 

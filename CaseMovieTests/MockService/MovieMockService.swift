@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class MovieMockService: MovieServiceProtocol {
-    func getPopularMovies(pageId: Int, completion: @escaping (Result<PopularMoviesResponse, AFError>) -> Void) {
+    func getPopularMovies(pageId: Int, completion: @escaping (Result<MoviesResponse, AFError>) -> Void) {
         //TODO:
     }
     

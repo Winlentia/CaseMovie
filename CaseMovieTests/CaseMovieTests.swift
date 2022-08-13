@@ -22,6 +22,12 @@ class CaseMovieTests: XCTestCase {
         let movieDetail: MovieDetailResponse = MovieDetailResponse.loadFromJsonString(string: TestConstants.MockStrings.movieDetail)
         XCTAssertNotNil(movieDetail)
     }
+    
+    func testSearchString() throws {
+        XCTAssertEqual("Sample Search".getSearchQuery(), "Sample+Search")
+        XCTAssertEqual("this is sample search for test".getSearchQuery(), "this+is+sample+search+for+test")
+        XCTAssertNotEqual("Sample search".getSearchQuery(), "Sample Search")
+    }
 
     func testExample() throws {
         // This is an example of a functional test case.
