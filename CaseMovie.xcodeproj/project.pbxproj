@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D5042253E694B13489398CC /* Pods_CaseMovie_CaseMovieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3BDBA2D31AD47E3437E44CC /* Pods_CaseMovie_CaseMovieUITests.framework */; };
 		3B9F4823A4C68996389699AB /* Pods_CaseMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B7111C9BFF2C889D4B45B0 /* Pods_CaseMovie.framework */; };
 		7880A34B28A7B92600609D8B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880A34A28A7B92600609D8B /* Date+Extensions.swift */; };
 		7880A34E28A7C18000609D8B /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880A34D28A7C18000609D8B /* Decodable+Extensions.swift */; };
@@ -28,8 +27,6 @@
 		788F6EFB28A44D7700F0D0B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 788F6EFA28A44D7700F0D0B4 /* Assets.xcassets */; };
 		788F6EFE28A44D7700F0D0B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788F6EFC28A44D7700F0D0B4 /* LaunchScreen.storyboard */; };
 		788F6F0928A44D7700F0D0B4 /* CaseMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F0828A44D7700F0D0B4 /* CaseMovieTests.swift */; };
-		788F6F1328A44D7700F0D0B4 /* CaseMovieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F1228A44D7700F0D0B4 /* CaseMovieUITests.swift */; };
-		788F6F1528A44D7700F0D0B4 /* CaseMovieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F1428A44D7700F0D0B4 /* CaseMovieUITestsLaunchTests.swift */; };
 		788F6F2428A44F1000F0D0B4 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F2228A44F1000F0D0B4 /* NetworkRequest.swift */; };
 		788F6F2528A44F1000F0D0B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F2328A44F1000F0D0B4 /* NetworkService.swift */; };
 		788F6F2828A44F6800F0D0B4 /* Codable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6F2728A44F6800F0D0B4 /* Codable+Extensions.swift */; };
@@ -61,13 +58,6 @@
 			remoteGlobalIDString = 788F6EED28A44D7600F0D0B4;
 			remoteInfo = CaseMovie;
 		};
-		788F6F0F28A44D7700F0D0B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 788F6EE628A44D7600F0D0B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 788F6EED28A44D7600F0D0B4;
-			remoteInfo = CaseMovie;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -88,9 +78,6 @@
 		788F6EFF28A44D7700F0D0B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		788F6F0428A44D7700F0D0B4 /* CaseMovieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaseMovieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		788F6F0828A44D7700F0D0B4 /* CaseMovieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseMovieTests.swift; sourceTree = "<group>"; };
-		788F6F0E28A44D7700F0D0B4 /* CaseMovieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaseMovieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		788F6F1228A44D7700F0D0B4 /* CaseMovieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseMovieUITests.swift; sourceTree = "<group>"; };
-		788F6F1428A44D7700F0D0B4 /* CaseMovieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseMovieUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		788F6F2228A44F1000F0D0B4 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		788F6F2328A44F1000F0D0B4 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		788F6F2728A44F6800F0D0B4 /* Codable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Extensions.swift"; sourceTree = "<group>"; };
@@ -135,14 +122,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		788F6F0B28A44D7700F0D0B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1D5042253E694B13489398CC /* Pods_CaseMovie_CaseMovieUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -175,7 +154,6 @@
 			children = (
 				788F6EF028A44D7600F0D0B4 /* CaseMovie */,
 				788F6F0728A44D7700F0D0B4 /* CaseMovieTests */,
-				788F6F1128A44D7700F0D0B4 /* CaseMovieUITests */,
 				788F6EEF28A44D7600F0D0B4 /* Products */,
 				ECA567CA27FDA00C3B68A3D5 /* Pods */,
 				BD0F64CECEFACCA1AFCEB3DF /* Frameworks */,
@@ -187,7 +165,6 @@
 			children = (
 				788F6EEE28A44D7600F0D0B4 /* CaseMovie.app */,
 				788F6F0428A44D7700F0D0B4 /* CaseMovieTests.xctest */,
-				788F6F0E28A44D7700F0D0B4 /* CaseMovieUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,15 +194,6 @@
 				7880A36128A7CB3400609D8B /* MovieDetailViewModelTests.swift */,
 			);
 			path = CaseMovieTests;
-			sourceTree = "<group>";
-		};
-		788F6F1128A44D7700F0D0B4 /* CaseMovieUITests */ = {
-			isa = PBXGroup;
-			children = (
-				788F6F1228A44D7700F0D0B4 /* CaseMovieUITests.swift */,
-				788F6F1428A44D7700F0D0B4 /* CaseMovieUITestsLaunchTests.swift */,
-			);
-			path = CaseMovieUITests;
 			sourceTree = "<group>";
 		};
 		788F6F2128A44EA900F0D0B4 /* Networking */ = {
@@ -382,26 +350,6 @@
 			productReference = 788F6F0428A44D7700F0D0B4 /* CaseMovieTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		788F6F0D28A44D7700F0D0B4 /* CaseMovieUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 788F6F1E28A44D7700F0D0B4 /* Build configuration list for PBXNativeTarget "CaseMovieUITests" */;
-			buildPhases = (
-				52B4795A29526D6D843EC2F9 /* [CP] Check Pods Manifest.lock */,
-				788F6F0A28A44D7700F0D0B4 /* Sources */,
-				788F6F0B28A44D7700F0D0B4 /* Frameworks */,
-				788F6F0C28A44D7700F0D0B4 /* Resources */,
-				5AE41C048423B3ACBB273B45 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				788F6F1028A44D7700F0D0B4 /* PBXTargetDependency */,
-			);
-			name = CaseMovieUITests;
-			productName = CaseMovieUITests;
-			productReference = 788F6F0E28A44D7700F0D0B4 /* CaseMovieUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -416,10 +364,6 @@
 						CreatedOnToolsVersion = 13.3;
 					};
 					788F6F0328A44D7700F0D0B4 = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = 788F6EED28A44D7600F0D0B4;
-					};
-					788F6F0D28A44D7700F0D0B4 = {
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = 788F6EED28A44D7600F0D0B4;
 					};
@@ -440,7 +384,6 @@
 			targets = (
 				788F6EED28A44D7600F0D0B4 /* CaseMovie */,
 				788F6F0328A44D7700F0D0B4 /* CaseMovieTests */,
-				788F6F0D28A44D7700F0D0B4 /* CaseMovieUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -456,13 +399,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		788F6F0228A44D7700F0D0B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		788F6F0C28A44D7700F0D0B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -492,45 +428,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		52B4795A29526D6D843EC2F9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CaseMovie-CaseMovieUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5AE41C048423B3ACBB273B45 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CaseMovie-CaseMovieUITests/Pods-CaseMovie-CaseMovieUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CaseMovie-CaseMovieUITests/Pods-CaseMovie-CaseMovieUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CaseMovie-CaseMovieUITests/Pods-CaseMovie-CaseMovieUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		74F3EFB8E72FBB56E91734A0 /* [CP] Embed Pods Frameworks */ = {
@@ -626,15 +523,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		788F6F0A28A44D7700F0D0B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				788F6F1328A44D7700F0D0B4 /* CaseMovieUITests.swift in Sources */,
-				788F6F1528A44D7700F0D0B4 /* CaseMovieUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -642,11 +530,6 @@
 			isa = PBXTargetDependency;
 			target = 788F6EED28A44D7600F0D0B4 /* CaseMovie */;
 			targetProxy = 788F6F0528A44D7700F0D0B4 /* PBXContainerItemProxy */;
-		};
-		788F6F1028A44D7700F0D0B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 788F6EED28A44D7600F0D0B4 /* CaseMovie */;
-			targetProxy = 788F6F0F28A44D7700F0D0B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -876,44 +759,6 @@
 			};
 			name = Release;
 		};
-		788F6F1F28A44D7700F0D0B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BC7008709E2C55BB75BF2BA /* Pods-CaseMovie-CaseMovieUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9A26P3RMBN;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.winlentia.CaseMovieUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CaseMovie;
-			};
-			name = Debug;
-		};
-		788F6F2028A44D7700F0D0B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F7DE640444B46F5D932BEB9 /* Pods-CaseMovie-CaseMovieUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9A26P3RMBN;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.winlentia.CaseMovieUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CaseMovie;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -940,15 +785,6 @@
 			buildConfigurations = (
 				788F6F1C28A44D7700F0D0B4 /* Debug */,
 				788F6F1D28A44D7700F0D0B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		788F6F1E28A44D7700F0D0B4 /* Build configuration list for PBXNativeTarget "CaseMovieUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				788F6F1F28A44D7700F0D0B4 /* Debug */,
-				788F6F2028A44D7700F0D0B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
