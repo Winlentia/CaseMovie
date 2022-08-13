@@ -1,14 +1,15 @@
 //
-//  CaseMovieTests.swift
+//  MovieDetailViewModelTests.swift
 //  CaseMovieTests
 //
-//  Created by Winlentia on 10.08.2022.
+//  Created by Winlentia on 13.08.2022.
 //
 
 import XCTest
-@testable import CaseMovie
 
-class CaseMovieTests: XCTestCase {
+class MovieDetailViewModelTests: XCTestCase {
+    
+    let viewModel = MovieDetailViewModel(movieId: 361743, service: MovieMockService())
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,9 +19,8 @@ class CaseMovieTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testMock() throws {
-        let movieDetail: MovieDetailResponse = MovieDetailResponse.loadFromJsonString(string: TestConstants.MockStrings.movieDetail)
-        XCTAssertNotNil(movieDetail)
+    func testTitle() throws {
+        XCTAssertEqual(viewModel.title, "Top Gun: Maverick")
     }
 
     func testExample() throws {
