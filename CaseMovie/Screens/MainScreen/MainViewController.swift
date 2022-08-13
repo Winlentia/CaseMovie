@@ -103,14 +103,12 @@ extension MainViewController: UISearchBarDelegate {
         print(searchText)
         searchWorkItem?.cancel()
 
-                // Wrap our request in a work item
         let requestWorkItem = DispatchWorkItem { [weak self] in
             guard let self = self else { return }
             self.viewModel.search(query: searchText)
             print("requestActivated")
         }
 
-        // Save the new work item and execute it after 250 ms
         searchWorkItem = requestWorkItem
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300),
                                       execute: requestWorkItem)

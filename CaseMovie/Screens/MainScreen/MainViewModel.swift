@@ -18,12 +18,18 @@ class MainViewModel {
     
     var popularMovieData: [Movie] = []
     
+    var searchQuery: String = ""
+    
     init(movieService: MovieServiceProtocol = MovieService(), searchService: SearchServiceProtocol = SearchService()){
         self.movieService = movieService
         self.searchService = searchService
     }
     
     var reloadCompletion: (() -> Void)?
+    
+    var isSearchActive: Bool {
+        !searchQuery.isEmpty
+    }
     
     func fetchMovies() {
         if isPaginationCompleted {
@@ -49,10 +55,12 @@ class MainViewModel {
     }
     
     func search(query: String){
+        searchQuery = query.getSearchQuery()
+        
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        searchService.searchMovies(query: query.getSearchQuery()) { result in
+        searchService.searchMovies(query: searchQuery) { result in
             switch result {
             case .success(let response):
                 dispatchGroup.leave()
@@ -65,7 +73,7 @@ class MainViewModel {
         }
         
         dispatchGroup.enter()
-        searchService.searchActors(query: query.getSearchQuery()) { result in
+        searchService.searchActors(query: searchQuery) { result in
             switch result {
             case .success(let response):
                 dispatchGroup.leave()
