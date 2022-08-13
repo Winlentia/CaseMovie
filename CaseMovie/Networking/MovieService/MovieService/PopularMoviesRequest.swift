@@ -11,6 +11,7 @@ final class PopularMoviesRequest: NetworkRequest {
     init(page: Int) {
         super.init()
         self.path = "movie/popular?page=\(page)"
+        self.blocks = page == 1 ? true : false
     }
 }
 

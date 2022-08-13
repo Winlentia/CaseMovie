@@ -11,14 +11,14 @@ import Alamofire
 class NetworkService {
     func performRequest<T:Decodable>(request: NetworkRequest, completion:@escaping (Result<T,AFError>) -> Void) {
         if request.blocks {
-            // start loading
+            LoadingIndicator.sharedInstance.startAnimation()
         }
         
         AF.request(request)
             .responseDecodable (decoder: SnakeCaseJSONDecoder()) { (response: DataResponse<T, AFError>) in
                 completion(response.result)
                 if request.blocks {
-                    // stop loading
+                    LoadingIndicator.sharedInstance.stopAnimation()
                 }
             }
         

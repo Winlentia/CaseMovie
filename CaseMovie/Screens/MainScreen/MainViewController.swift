@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController {
     
     var viewModel = MainViewModel()
     private var searchWorkItem: DispatchWorkItem?

@@ -14,7 +14,7 @@ class NetworkRequest: URLRequestConvertible {
     var path: String = ""
     var method: HTTPMethod = .get
     var parameters: Codable?
-    var blocks: Bool = false
+    var blocks: Bool = true
     
     func asURLRequest() throws -> URLRequest {
         let requestUrl = baseURL + path
