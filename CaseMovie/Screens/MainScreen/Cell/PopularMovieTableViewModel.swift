@@ -24,8 +24,8 @@ class PopularMovieTableViewModel {
     }
     
     var releaseDate: String {
-        if let releaseDate = movie.releaseDate {
-            return "Release Date: \(releaseDate)"
+        if let releaseDate = movie.releaseDate, let year = Date().from(string: releaseDate)?.getYear() {
+            return "Release Date: \(year)"
         } else {
             return ""
         }

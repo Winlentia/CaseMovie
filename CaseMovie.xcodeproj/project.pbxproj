@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D5042253E694B13489398CC /* Pods_CaseMovie_CaseMovieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3BDBA2D31AD47E3437E44CC /* Pods_CaseMovie_CaseMovieUITests.framework */; };
 		3B9F4823A4C68996389699AB /* Pods_CaseMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B7111C9BFF2C889D4B45B0 /* Pods_CaseMovie.framework */; };
+		7880A34B28A7B92600609D8B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880A34A28A7B92600609D8B /* Date+Extensions.swift */; };
 		788F6EF228A44D7600F0D0B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6EF128A44D7600F0D0B4 /* AppDelegate.swift */; };
 		788F6EF628A44D7600F0D0B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F6EF528A44D7600F0D0B4 /* ViewController.swift */; };
 		788F6EFB28A44D7700F0D0B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 788F6EFA28A44D7700F0D0B4 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		67CBD10F5C15D0C9B0470C82 /* Pods_CaseMovieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaseMovieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708CC0BC2FCA495C1A46A433 /* Pods-CaseMovieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaseMovieTests.release.xcconfig"; path = "Target Support Files/Pods-CaseMovieTests/Pods-CaseMovieTests.release.xcconfig"; sourceTree = "<group>"; };
 		73B7111C9BFF2C889D4B45B0 /* Pods_CaseMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaseMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7880A34A28A7B92600609D8B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		788F6EEE28A44D7600F0D0B4 /* CaseMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaseMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		788F6EF128A44D7600F0D0B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		788F6EF528A44D7600F0D0B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				78C5C64328A5979E005794F6 /* UITableViewCell+Extensions.swift */,
 				78C5C64528A59EC0005794F6 /* Kingfisher+Extensions.swift */,
 				78BE8D7C28A69A3E00C35849 /* UIFont+Extensions.swift */,
+				7880A34A28A7B92600609D8B /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				788F6F3528A45F3500F0D0B4 /* PopularMoviesRequest.swift in Sources */,
 				788F6F2828A44F6800F0D0B4 /* Codable+Extensions.swift in Sources */,
 				788F6EF228A44D7600F0D0B4 /* AppDelegate.swift in Sources */,
+				7880A34B28A7B92600609D8B /* Date+Extensions.swift in Sources */,
 				788F6F3028A4589900F0D0B4 /* MovieDetail.swift in Sources */,
 				78BE8D7D28A69A3E00C35849 /* UIFont+Extensions.swift in Sources */,
 				788F6F3728A4616D00F0D0B4 /* MovieService.swift in Sources */,

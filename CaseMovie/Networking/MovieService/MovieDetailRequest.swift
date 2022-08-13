@@ -32,6 +32,7 @@ struct MovieDetailResponse: Codable {
     let budget: Int?
     let genres: [Genre]?
     let homepage: String?
+    let runtime: Int?
 }
 
 struct Genre: Codable {

@@ -52,6 +52,22 @@ class MovieDetailViewController: UIViewController {
         return label
     }()
     
+    lazy var subTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .appMainFont
+        return label
+    }()
+    
+    lazy var scoreAndBudgetLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .appMainFont
+        return label
+    }()
+    
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -82,16 +98,17 @@ class MovieDetailViewController: UIViewController {
             make.top.bottom.equalToSuperview()
         }
         
-        mainStackView.insertArrangedSubview(posterImageView, at: 0)
+        mainStackView.addArrangedSubview(posterImageView)
         
         posterImageView.snp.makeConstraints { make in
             make.width.equalTo(view)
             make.height.equalTo(view).multipliedBy(0.6)
         }
         
-        mainStackView.insertArrangedSubview(titleLabel, at: 1)
-        
-        mainStackView.insertArrangedSubview(descriptionLabel, at: 2)
+        mainStackView.addArrangedSubview(titleLabel)
+        mainStackView.addArrangedSubview(subTitleLabel)
+        mainStackView.addArrangedSubview(scoreAndBudgetLabel)
+        mainStackView.addArrangedSubview(descriptionLabel)
     }
     
     fileprivate func bindViewModel() {
@@ -100,7 +117,9 @@ class MovieDetailViewController: UIViewController {
             self.title = self.viewModel.navigationTitle
             self.posterImageView.setImage(withUrl: self.viewModel.imageUrl)
             self.titleLabel.text = self.viewModel.title
+            self.subTitleLabel.text = self.viewModel.subTitle
             self.descriptionLabel.text = self.viewModel.description
+            self.scoreAndBudgetLabel.text = self.viewModel.scoreAndBudget
         }
     }
 }
