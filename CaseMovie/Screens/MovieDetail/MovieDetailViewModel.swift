@@ -42,6 +42,10 @@ class MovieDetailViewModel {
         movieData?.originalTitle ?? ""
     }
     
+    var description: String {
+        movieData?.overview ?? ""
+    }
+    
     var imageUrl: String {
         let imagePath = movieData?.posterPath ?? ""
         return "https://image.tmdb.org/t/p/w500\(imagePath)"

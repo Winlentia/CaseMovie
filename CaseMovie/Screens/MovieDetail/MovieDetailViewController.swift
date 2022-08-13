@@ -30,7 +30,7 @@ class MovieDetailViewController: UIViewController {
     lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.alignment = .center
+        stackView.alignment = .leading
         stackView.axis = .vertical
         stackView.spacing = 8
         return stackView
@@ -39,6 +39,7 @@ class MovieDetailViewController: UIViewController {
     lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -51,13 +52,19 @@ class MovieDetailViewController: UIViewController {
         return label
     }()
     
+    lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .appMainFont
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
         setupUI()
         bindViewModel()
-        
-
     }
     
     fileprivate func setupUI() {
@@ -71,7 +78,8 @@ class MovieDetailViewController: UIViewController {
         
         scrollView.addSubview(mainStackView)
         mainStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.right.equalTo(view)
+            make.top.bottom.equalToSuperview()
         }
         
         mainStackView.insertArrangedSubview(posterImageView, at: 0)
@@ -83,7 +91,7 @@ class MovieDetailViewController: UIViewController {
         
         mainStackView.insertArrangedSubview(titleLabel, at: 1)
         
-        
+        mainStackView.insertArrangedSubview(descriptionLabel, at: 2)
     }
     
     fileprivate func bindViewModel() {
@@ -92,7 +100,7 @@ class MovieDetailViewController: UIViewController {
             self.title = self.viewModel.navigationTitle
             self.posterImageView.setImage(withUrl: self.viewModel.imageUrl)
             self.titleLabel.text = self.viewModel.title
+            self.descriptionLabel.text = self.viewModel.description
         }
     }
-
 }
