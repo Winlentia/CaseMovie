@@ -7,21 +7,21 @@
 
 import Foundation
 
-struct ActorViewModel {
-    let actor: Actor
+struct PersonTableViewModel {
+    let person: Person
     let seperatorString = " | "
     
-    init(actor: Actor){
-        self.actor = actor
+    init(actor: Person){
+        self.person = actor
     }
     
     var title: String {
-        actor.name ?? ""
+        person.name ?? ""
     }
     
     var popularJobs: String {
         var popularJobs: String = ""
-        if let knownMovies = actor.knownFor {
+        if let knownMovies = person.knownFor {
             
             for (indx,movie) in knownMovies.enumerated() {
                 guard let title = movie.title else { break }

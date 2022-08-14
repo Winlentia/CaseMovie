@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ActorTableViewCell: UITableViewCell {
+class PersonTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

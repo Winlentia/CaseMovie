@@ -73,7 +73,7 @@ class MainViewModel {
         }
         
         dispatchGroup.enter()
-        searchService.searchActors(query: searchQuery) { result in
+        searchService.searchPersons(query: searchQuery) { result in
             switch result {
             case .success(let response):
                 dispatchGroup.leave()

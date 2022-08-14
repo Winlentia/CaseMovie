@@ -59,6 +59,7 @@ class MainViewController: BaseViewController {
     
     fileprivate func setupSearchBar() {
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.isHidden = false
     }
     

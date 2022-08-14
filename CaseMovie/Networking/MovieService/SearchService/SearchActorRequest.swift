@@ -14,15 +14,15 @@ class SearchActorRequest: NetworkRequest {
     }
 }
 
-struct SearchActorResponse: Codable {
+struct SearchPersonResponse: Codable {
     let page: Int?
-    let results: [Actor]?
+    let results: [Person]?
     let totalPages: Int?
     let totalResults: Int?
 }
 
 
-struct Actor: Codable {
+struct Person: Codable {
     let adult: Bool?
     let gender: Int?
     let id: Int?
