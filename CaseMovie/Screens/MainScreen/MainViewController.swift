@@ -69,7 +69,8 @@ class MainViewController: BaseViewController {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                if self.viewModel.isSearchActive {
+                if self.viewModel.isSearchActive && !self.viewModel.searchData.results.isEmpty {
+                    
                     self.tableView.scrollToRow(at: .init(row: 0, section: 0), at: .top, animated: true)
                 }
             }
@@ -85,7 +86,7 @@ extension MainViewController: UITableViewDataSource {
         } else {
             tableView.removeEmptyMessage()
         }
-        return viewModel.numberOfSections()
+        return numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
