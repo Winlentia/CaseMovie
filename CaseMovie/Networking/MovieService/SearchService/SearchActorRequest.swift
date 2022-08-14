@@ -22,14 +22,4 @@ struct SearchPersonResponse: Codable {
 }
 
 
-struct Person: Codable {
-    let adult: Bool?
-    let gender: Int?
-    let id: Int?
-    let knownFor: [Movie]?
-    let knownForDepartment: String?
-    let name: String?
-    let popularity: Double?
-    let profilePath: String?
-}
 

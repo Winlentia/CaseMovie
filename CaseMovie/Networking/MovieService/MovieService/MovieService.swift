@@ -10,11 +10,11 @@ import Alamofire
 
 protocol MovieServiceProtocol {
     func getPopularMovies(pageId: Int, completion:@escaping (Result<MoviesResponse,AFError>) -> Void)
-    func getMovieDetail(id: Int, completion:@escaping (Result<MovieDetailResponse,AFError>) -> Void)
+    func getMovieDetail(id: Int, completion:@escaping (Result<MovieDetail,AFError>) -> Void)
 }
 
 final class MovieService: NetworkService, MovieServiceProtocol {
-    func getMovieDetail(id: Int, completion: @escaping (Result<MovieDetailResponse, AFError>) -> Void) {
+    func getMovieDetail(id: Int, completion: @escaping (Result<MovieDetail, AFError>) -> Void) {
         self.performRequest(request: MovieDetailRequest(id: id)) { result in
             completion(result)
         }

@@ -11,7 +11,7 @@ class MovieDetailViewModel {
     
     let movieId: Int
     let service: MovieServiceProtocol
-    var movieData: MovieDetailResponse?
+    var movieData: MovieDetail?
     
     init(movieId: Int, service: MovieServiceProtocol = MovieService()){
         self.service = service
