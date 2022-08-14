@@ -8,7 +8,7 @@
 import Foundation
 
 extension Date {
-    func from(string: String) -> Date? {
+    static func from(string: String) -> Date? {
         let isoFormatter = DateFormatter()
         isoFormatter.dateFormat = "yyyy-MM-dd"
         isoFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -21,4 +21,17 @@ extension Date {
         dateFormatter.dateFormat = "yyyy"
         return dateFormatter.string(from: self)
     }
+    
+    func getDay() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        return dateFormatter.string(from: self)
+    }
+
+    func getMonthName() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMM")
+        return dateFormatter.string(from: self)
+    }
+    
 }

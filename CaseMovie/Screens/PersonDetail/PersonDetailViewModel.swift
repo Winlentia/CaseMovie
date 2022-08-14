@@ -42,7 +42,14 @@ class PersonDetailViewModel {
     }
     
     var subTitle: String {
-        "TODOOOOOO"
+        var subTitle = ""
+        if let birth = personData?.birthday, let birthDate = Date.from(string: birth) {
+            subTitle = subTitle + "Born \(birthDate.getDay()) \(birthDate.getMonthName()) \(birthDate.getYear())"
+        }
+        if let death = personData?.deathday, let deathDate = Date.from(string: death) {
+            subTitle = subTitle + "\n" + "Died \(deathDate.getDay()) \(deathDate.getMonthName()) \(deathDate.getYear())"
+        }
+        return subTitle
     }
     
     var biography: String {
@@ -54,5 +61,15 @@ class PersonDetailViewModel {
         return "https://image.tmdb.org/t/p/w500\(imagePath)"
     }
     
+    var isImdbButtonHidden: Bool {
+        imdbUrl != nil ? false : true
+    }
     
+    var imdbUrl: String? {
+        if let imdbId = personData?.imdbId {
+            return "https://www.imdb.com/name/\(imdbId)/"
+        }
+        return nil
+    }
+
 }

@@ -50,7 +50,7 @@ class MovieDetailViewModel {
     var subTitle: String {
         var subTitle: String = ""
         
-        if let releaseDate = Date().from(string: movieData?.releaseDate ?? "") {
+        if let releaseDate = Date.from(string: movieData?.releaseDate ?? "") {
             subTitle = subTitle + releaseDate.getYear() + seperatorString
         }
         
@@ -89,6 +89,17 @@ class MovieDetailViewModel {
     var imageUrl: String {
         let imagePath = movieData?.posterPath ?? ""
         return "https://image.tmdb.org/t/p/w500\(imagePath)"
+    }
+    
+    var isImdbButtonHidden: Bool {
+        imdbUrl != nil ? false : true
+    }
+    
+    var imdbUrl: String? {
+        if let imdbId = movieData?.imdbId {
+            return "https://www.imdb.com/title/\(imdbId)/"
+        }
+        return nil
     }
     
     private func minutesToHoursAndMinutes(_ minutes: Int) -> (hours: Int , leftMinutes: Int) {

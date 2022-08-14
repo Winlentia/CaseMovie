@@ -24,7 +24,7 @@ struct PersonTableViewModel {
         if let knownMovies = person.knownFor {
             
             for (indx,movie) in knownMovies.enumerated() {
-                guard let title = movie.title else { break }
+                guard let title = movie.title, !title.isEmpty else { continue }
                 if indx == knownMovies.count - 1 {
                     popularJobs = popularJobs + title
                     break

@@ -83,6 +83,17 @@ class PersonDetailViewController: BaseViewController {
         return label
     }()
     
+    lazy var imdbButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemYellow
+        button.titleLabel?.text = "IMDB Page"
+        button.titleLabel?.font = .appBoldFont
+        button.setTitle("IMDB Page", for: .normal)
+        button.isHidden = true
+        button.addTarget(self, action: #selector(imdbButtonAction), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .red
@@ -128,6 +139,11 @@ class PersonDetailViewController: BaseViewController {
         detailStackView.addArrangedSubview(titleLabel)
         detailStackView.addArrangedSubview(subTitleLabel)
         detailStackView.addArrangedSubview(biographyLabel)
+        detailStackView.addArrangedSubview(imdbButton)
+        imdbButton.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(50)
+        }
     }
     
     fileprivate func bindViewModel() {
@@ -138,8 +154,15 @@ class PersonDetailViewController: BaseViewController {
             self.profileImage.setImage(withUrl: self.viewModel.profileImageUrl)
             self.titleLabel.text = self.viewModel.title
             self.biographyLabel.text = self.viewModel.biography
-
+            
+            self.imdbButton.isHidden = self.viewModel.isImdbButtonHidden
         }
     }
 
+    @objc fileprivate func imdbButtonAction(){
+        if let imdbUrl = viewModel.imdbUrl,let url = URL(string: imdbUrl) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
 }

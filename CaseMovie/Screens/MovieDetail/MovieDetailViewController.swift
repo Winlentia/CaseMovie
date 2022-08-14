@@ -91,6 +91,17 @@ class MovieDetailViewController: BaseViewController {
         return label
     }()
     
+    lazy var imdbButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemYellow
+        button.titleLabel?.text = "IMDB Page"
+        button.titleLabel?.font = .appBoldFont
+        button.setTitle("IMDB Page", for: .normal)
+        button.isHidden = true
+        button.addTarget(self, action: #selector(imdbButtonAction), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
@@ -135,6 +146,12 @@ class MovieDetailViewController: BaseViewController {
         detailStackView.addArrangedSubview(subTitleLabel)
         detailStackView.addArrangedSubview(scoreAndBudgetLabel)
         detailStackView.addArrangedSubview(descriptionLabel)
+        
+        detailStackView.addArrangedSubview(imdbButton)
+        imdbButton.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(50)
+        }
     }
     
     fileprivate func bindViewModel() {
@@ -146,6 +163,13 @@ class MovieDetailViewController: BaseViewController {
             self.subTitleLabel.text = self.viewModel.subTitle
             self.descriptionLabel.text = self.viewModel.description
             self.scoreAndBudgetLabel.text = self.viewModel.scoreAndBudget
+            self.imdbButton.isHidden = self.viewModel.isImdbButtonHidden
+        }
+    }
+    
+    @objc fileprivate func imdbButtonAction(){
+        if let imdbUrl = viewModel.imdbUrl,let url = URL(string: imdbUrl) {
+            UIApplication.shared.open(url)
         }
     }
 }

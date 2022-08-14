@@ -26,4 +26,5 @@ struct MovieDetail: Codable {
     let genres: [Genre]?
     let homepage: String?
     let runtime: Int?
+    let imdbId: String
 }
