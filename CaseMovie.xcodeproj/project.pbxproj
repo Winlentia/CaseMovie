@@ -11,6 +11,8 @@
 		78791B5728A9428100C54632 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78791B5628A9428100C54632 /* PersonDetailViewController.swift */; };
 		78791B5928A9428900C54632 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78791B5828A9428900C54632 /* PersonDetailViewModel.swift */; };
 		78791B5B28A9486B00C54632 /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78791B5A28A9486B00C54632 /* Formatter+Extensions.swift */; };
+		78791B5E28A94C8700C54632 /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78791B5D28A94C8700C54632 /* PersonService.swift */; };
+		78791B6028A94C9300C54632 /* PersonDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78791B5F28A94C9300C54632 /* PersonDetailRequest.swift */; };
 		7880A34B28A7B92600609D8B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880A34A28A7B92600609D8B /* Date+Extensions.swift */; };
 		7880A34E28A7C18000609D8B /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880A34D28A7C18000609D8B /* Decodable+Extensions.swift */; };
 		7880A35528A7C7B200609D8B /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880A35428A7C7B200609D8B /* TestConstants.swift */; };
@@ -79,6 +81,8 @@
 		78791B5628A9428100C54632 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		78791B5828A9428900C54632 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 		78791B5A28A9486B00C54632 /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
+		78791B5D28A94C8700C54632 /* PersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
+		78791B5F28A94C9300C54632 /* PersonDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailRequest.swift; sourceTree = "<group>"; };
 		7880A34A28A7B92600609D8B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		7880A34D28A7C18000609D8B /* Decodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extensions.swift"; sourceTree = "<group>"; };
 		7880A35428A7C7B200609D8B /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
@@ -154,6 +158,15 @@
 				78791B5828A9428900C54632 /* PersonDetailViewModel.swift */,
 			);
 			path = PersonDetail;
+			sourceTree = "<group>";
+		};
+		78791B5C28A94C7300C54632 /* PersonService */ = {
+			isa = PBXGroup;
+			children = (
+				78791B5D28A94C8700C54632 /* PersonService.swift */,
+				78791B5F28A94C9300C54632 /* PersonDetailRequest.swift */,
+			);
+			path = PersonService;
 			sourceTree = "<group>";
 		};
 		7880A34C28A7C16500609D8B /* Extensions */ = {
@@ -323,6 +336,7 @@
 		788F6F3328A45CFF00F0D0B4 /* MovieService */ = {
 			isa = PBXGroup;
 			children = (
+				78791B5C28A94C7300C54632 /* PersonService */,
 				7880A36628A7EEB300609D8B /* SearchService */,
 				7880A36528A7EEA400609D8B /* MovieService */,
 			);
@@ -571,6 +585,7 @@
 				788F6F3A28A4648F00F0D0B4 /* MovieDetailRequest.swift in Sources */,
 				788F6F2428A44F1000F0D0B4 /* NetworkRequest.swift in Sources */,
 				7880A37928A816F800609D8B /* LoadingIndicator.swift in Sources */,
+				78791B5E28A94C8700C54632 /* PersonService.swift in Sources */,
 				78C5C64628A59EC0005794F6 /* Kingfisher+Extensions.swift in Sources */,
 				78C5C64428A5979E005794F6 /* UITableViewCell+Extensions.swift in Sources */,
 				78791B5928A9428900C54632 /* PersonDetailViewModel.swift in Sources */,
@@ -579,6 +594,7 @@
 				788F6F2528A44F1000F0D0B4 /* NetworkService.swift in Sources */,
 				78791B5B28A9486B00C54632 /* Formatter+Extensions.swift in Sources */,
 				788F6F4028A57AAE00F0D0B4 /* MainViewModel.swift in Sources */,
+				78791B6028A94C9300C54632 /* PersonDetailRequest.swift in Sources */,
 				7880A37B28A817B100609D8B /* UIApplication+Extensions.swift in Sources */,
 				788F6F2B28A44F9C00F0D0B4 /* AppConstants.swift in Sources */,
 				788F6F3528A45F3500F0D0B4 /* PopularMoviesRequest.swift in Sources */,

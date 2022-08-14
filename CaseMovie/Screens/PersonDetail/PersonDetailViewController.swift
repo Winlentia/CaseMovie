@@ -20,11 +20,126 @@ class PersonDetailViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        self.view.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .leading
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        return stackView
+    }()
+    
+    lazy var detailStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .leading
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        return stackView
+    }()
+    
+    lazy var detailContainerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var profileImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .appBoldFont
+        return label
+    }()
+    
+    lazy var subTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .appMainFont
+        return label
+    }()
+    
+    lazy var biographyLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .appMainFont
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .red
+        setupUI()
+        bindViewModel()
 
         // Do any additional setup after loading the view.
+    }
+    
+    fileprivate func setupUI() {
+        
+        self.view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        
+        scrollView.addSubview(mainStackView)
+        mainStackView.snp.makeConstraints { make in
+            make.left.right.equalTo(view)
+            make.top.bottom.equalToSuperview()
+        }
+        
+        mainStackView.addArrangedSubview(profileImage)
+        
+        profileImage.snp.makeConstraints { make in
+            make.width.equalTo(view)
+            make.height.equalTo(view).multipliedBy(0.6)
+        }
+        
+        mainStackView.addArrangedSubview(detailContainerView)
+        
+        detailContainerView.addSubview(detailStackView)
+        detailContainerView.snp.makeConstraints { make in
+            make.width.equalTo(view)
+        }
+        
+        detailStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(8)
+        }
+        
+        detailStackView.addArrangedSubview(titleLabel)
+        detailStackView.addArrangedSubview(subTitleLabel)
+        detailStackView.addArrangedSubview(biographyLabel)
+    }
+    
+    fileprivate func bindViewModel() {
+        viewModel.updateUI = { [weak self] in
+            guard let self = self else { return }
+            self.title = self.viewModel.navigationTitle
+            self.subTitleLabel.text = self.viewModel.subTitle
+            self.profileImage.setImage(withUrl: self.viewModel.profileImageUrl)
+            self.titleLabel.text = self.viewModel.title
+            self.biographyLabel.text = self.viewModel.biography
+
+        }
     }
 
 }

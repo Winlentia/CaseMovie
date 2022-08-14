@@ -23,12 +23,10 @@ extension UIImageView {
             switch result {
             case .success(let result):
                 self.image = result.image
-            case .failure(let error):
-                //TODO: Image Implementation
+            case .failure(_):
                 self.image = UIImage(named: "not-found")
                 self.clipsToBounds = true
                 self.contentMode = .center
-                print(error)
             }
         }
 
