@@ -25,6 +25,9 @@ extension UIImageView {
                 self.image = result.image
             case .failure(let error):
                 //TODO: Image Implementation
+                self.image = UIImage(named: "not-found")
+                self.clipsToBounds = true
+                self.contentMode = .center
                 print(error)
             }
         }

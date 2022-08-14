@@ -94,7 +94,6 @@ extension MainViewModel {
                 }
             case .failure(let error):
                 dispatchGroup.leave()
-                print(error)
             }
         }
         
@@ -109,7 +108,6 @@ extension MainViewModel {
                 }
             case .failure(let error):
                 dispatchGroup.leave()
-                print(error)
             }
         }
         

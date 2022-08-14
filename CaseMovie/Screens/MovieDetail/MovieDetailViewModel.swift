@@ -79,7 +79,8 @@ class MovieDetailViewModel {
         }
         
         if let budget = movieData?.budget, budget != 0 {
-            scoreAndBudget = scoreAndBudget + seperatorString + "💵 \(budget)"
+            
+            scoreAndBudget = scoreAndBudget + seperatorString + "💵 \(budget.formattedWithSeparator)"
         }
         
         return scoreAndBudget

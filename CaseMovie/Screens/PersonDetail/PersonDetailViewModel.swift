@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class PersonDetailViewModel {
+    let personId: Int
+    
+    init(personId: Int){
+        self.personId = personId
+    }
+}

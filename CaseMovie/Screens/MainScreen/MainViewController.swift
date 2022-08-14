@@ -121,8 +121,9 @@ extension MainViewController: UITableViewDelegate {
         if viewModel.isSearchActive {
             switch viewModel.searchData.results[indexPath.section]{
             case .Person:
-                //TODO:
-                print("TODO")
+                if let personId = viewModel.searchData.personResults[indexPath.row].id {
+                    self.navigationController?.pushViewController(PersonDetailViewController(viewModel: .init(personId: personId)), animated: true)
+                }
             case .Movie:
                 if let movieId = viewModel.searchData.movieResults[indexPath.row].id {
                     self.navigationController?.pushViewController(MovieDetailViewController(viewModel: .init(movieId: movieId)), animated: true)

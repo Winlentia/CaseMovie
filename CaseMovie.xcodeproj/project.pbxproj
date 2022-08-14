@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3B9F4823A4C68996389699AB /* Pods_CaseMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B7111C9BFF2C889D4B45B0 /* Pods_CaseMovie.framework */; };
+		78791B5728A9428100C54632 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78791B5628A9428100C54632 /* PersonDetailViewController.swift */; };
+		78791B5928A9428900C54632 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78791B5828A9428900C54632 /* PersonDetailViewModel.swift */; };
+		78791B5B28A9486B00C54632 /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78791B5A28A9486B00C54632 /* Formatter+Extensions.swift */; };
 		7880A34B28A7B92600609D8B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880A34A28A7B92600609D8B /* Date+Extensions.swift */; };
 		7880A34E28A7C18000609D8B /* Decodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880A34D28A7C18000609D8B /* Decodable+Extensions.swift */; };
 		7880A35528A7C7B200609D8B /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880A35428A7C7B200609D8B /* TestConstants.swift */; };
@@ -73,6 +76,9 @@
 		67CBD10F5C15D0C9B0470C82 /* Pods_CaseMovieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaseMovieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708CC0BC2FCA495C1A46A433 /* Pods-CaseMovieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaseMovieTests.release.xcconfig"; path = "Target Support Files/Pods-CaseMovieTests/Pods-CaseMovieTests.release.xcconfig"; sourceTree = "<group>"; };
 		73B7111C9BFF2C889D4B45B0 /* Pods_CaseMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaseMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78791B5628A9428100C54632 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		78791B5828A9428900C54632 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
+		78791B5A28A9486B00C54632 /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
 		7880A34A28A7B92600609D8B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		7880A34D28A7C18000609D8B /* Decodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extensions.swift"; sourceTree = "<group>"; };
 		7880A35428A7C7B200609D8B /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
@@ -141,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78791B5528A9426800C54632 /* PersonDetail */ = {
+			isa = PBXGroup;
+			children = (
+				78791B5628A9428100C54632 /* PersonDetailViewController.swift */,
+				78791B5828A9428900C54632 /* PersonDetailViewModel.swift */,
+			);
+			path = PersonDetail;
+			sourceTree = "<group>";
+		};
 		7880A34C28A7C16500609D8B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +295,7 @@
 				7880A34A28A7B92600609D8B /* Date+Extensions.swift */,
 				7880A36B28A7F5A000609D8B /* String+Extensions.swift */,
 				7880A37A28A817B100609D8B /* UIApplication+Extensions.swift */,
+				78791B5A28A9486B00C54632 /* Formatter+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +344,7 @@
 			children = (
 				788F6F3B28A57A8000F0D0B4 /* MainScreen */,
 				78BE8D8128A6F08000C35849 /* MovieDetail */,
+				78791B5528A9426800C54632 /* PersonDetail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -548,6 +565,7 @@
 				78BE8D8028A6F07B00C35849 /* MovieDetailViewController.swift in Sources */,
 				7880A37628A80ADD00609D8B /* PersonTableViewModel.swift in Sources */,
 				78C5C64028A5954F005794F6 /* PopularMovieTableViewModel.swift in Sources */,
+				78791B5728A9428100C54632 /* PersonDetailViewController.swift in Sources */,
 				78BE8D8428A6F09700C35849 /* MovieDetailViewModel.swift in Sources */,
 				788F6EF628A44D7600F0D0B4 /* BaseViewController.swift in Sources */,
 				788F6F3A28A4648F00F0D0B4 /* MovieDetailRequest.swift in Sources */,
@@ -555,9 +573,11 @@
 				7880A37928A816F800609D8B /* LoadingIndicator.swift in Sources */,
 				78C5C64628A59EC0005794F6 /* Kingfisher+Extensions.swift in Sources */,
 				78C5C64428A5979E005794F6 /* UITableViewCell+Extensions.swift in Sources */,
+				78791B5928A9428900C54632 /* PersonDetailViewModel.swift in Sources */,
 				78C5C64228A5978A005794F6 /* UITableView+Extensions.swift in Sources */,
 				7880A36C28A7F5A000609D8B /* String+Extensions.swift in Sources */,
 				788F6F2528A44F1000F0D0B4 /* NetworkService.swift in Sources */,
+				78791B5B28A9486B00C54632 /* Formatter+Extensions.swift in Sources */,
 				788F6F4028A57AAE00F0D0B4 /* MainViewModel.swift in Sources */,
 				7880A37B28A817B100609D8B /* UIApplication+Extensions.swift in Sources */,
 				788F6F2B28A44F9C00F0D0B4 /* AppConstants.swift in Sources */,
