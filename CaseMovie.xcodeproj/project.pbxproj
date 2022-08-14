@@ -303,7 +303,6 @@
 		788F6EF028A44D7600F0D0B4 /* CaseMovie */ = {
 			isa = PBXGroup;
 			children = (
-				7880A37728A816E400609D8B /* LoadingIndicator */,
 				78BE8D7E28A6F05B00C35849 /* Screens */,
 				788F6F2C28A4556300F0D0B4 /* Models */,
 				788F6F2928A44F9400F0D0B4 /* Common */,
@@ -363,6 +362,7 @@
 		788F6F2928A44F9400F0D0B4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7880A37728A816E400609D8B /* LoadingIndicator */,
 				788F6EFA28A44D7700F0D0B4 /* Assets.xcassets */,
 				788F6EFC28A44D7700F0D0B4 /* LaunchScreen.storyboard */,
 				788F6F2A28A44F9C00F0D0B4 /* AppConstants.swift */,
