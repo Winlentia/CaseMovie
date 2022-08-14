@@ -9,7 +9,14 @@ import Foundation
 import Kingfisher
 
 extension UIImageView {
-    func setImage(withUrl: String){
+    func setImage(withUrl: String?){
+        guard let urlString = withUrl else {
+            self.image = UIImage(named: "not-found")
+            self.clipsToBounds = true
+            self.contentMode = .center
+            return
+        }
+        
         let modifier = AnyModifier { request in
             var r = request
             // replace "Access-Token" with the field name you need, it's just an example
@@ -17,7 +24,7 @@ extension UIImageView {
             return r
         }
 
-        let url = URL(string: withUrl)
+        let url = URL(string: urlString)
         
         self.kf.setImage(with: url, options: [.requestModifier(modifier)]) { result in
             switch result {

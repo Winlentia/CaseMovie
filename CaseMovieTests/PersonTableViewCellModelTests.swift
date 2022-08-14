@@ -1,14 +1,13 @@
 //
-//  CaseMovieTests.swift
+//  PersonTableViewCellModelTests.swift
 //  CaseMovieTests
 //
-//  Created by Winlentia on 10.08.2022.
+//  Created by Winlentia on 14.08.2022.
 //
 
 import XCTest
-@testable import CaseMovie
 
-class CaseMovieTests: XCTestCase {
+class PersonTableViewCellModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -17,22 +16,6 @@ class CaseMovieTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
-    func testMock() throws {
-        let movieDetail: MovieDetail = MovieDetail.loadFromJsonString(string: TestConstants.MockStrings.movieDetail)
-        XCTAssertNotNil(movieDetail)
-    }
-    
-    func testReadFromJsonFile() throws {
-        let url = Bundle(for: CaseMovieTests.self).url(forResource: "PopularMoviesPage1", withExtension: "json")
-        XCTAssertNotNil(url)
-    }
-    
-    func testSearchString() throws {
-        XCTAssertEqual("Sample Search".getSearchQuery(), "Sample+Search")
-        XCTAssertEqual("this is sample search for test".getSearchQuery(), "this+is+sample+search+for+test")
-        XCTAssertNotEqual("Sample search".getSearchQuery(), "Sample Search")
-    }
 
     func testExample() throws {
         // This is an example of a functional test case.
@@ -40,6 +23,17 @@ class CaseMovieTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    }
+    
+    func testViewModelVariables() throws {
+        let mainViewModel = MainViewModel(movieService: MovieMockService(), searchService: SearchMockService())
+        
+        mainViewModel.fetchMovies()
+        mainViewModel.search(query: "harry po")
+        let viewModel = PersonTableViewModel(actor: mainViewModel.searchData.personResults[0])
+        XCTAssertEqual(viewModel.title, "Harry Poppe Jr.")
+        XCTAssertEqual(viewModel.popularJobs, "Famous Boners | Procedure in the Traffic Courtroom")
+        XCTAssertNil(viewModel.imageUrl)
     }
 
     func testPerformanceExample() throws {

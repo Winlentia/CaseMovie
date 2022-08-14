@@ -18,9 +18,12 @@ class PopularMovieTableViewModel {
         movie.title ?? ""
     }
     
-    var imageUrl: String {
-        let imagePath = movie.posterPath ?? ""
-        return "https://image.tmdb.org/t/p/w200/\(imagePath)"
+    var imageUrl: String? {
+        if let imagePath = movie.posterPath {
+            return "https://image.tmdb.org/t/p/w200\(imagePath)"
+        } else {
+            return nil
+        }
     }
     
     var releaseDate: String {

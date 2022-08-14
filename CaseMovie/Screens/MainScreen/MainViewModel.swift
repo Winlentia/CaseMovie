@@ -158,19 +158,9 @@ class SearchResult {
         }
     }
 }
-//
+
 enum SearchSectionType {
     case Movie
     case Person
 }
-//
-//private enum Item {
-//    case Movie(model: Movie)
-//    case Person(model: Person)
-//}
-//
-//private struct SearchSection {
-//    var type: SearchSectionType
-//    var items: [Item]
-//}
 

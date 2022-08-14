@@ -1,14 +1,13 @@
 //
-//  CaseMovieTests.swift
+//  MainViewModelTests.swift
 //  CaseMovieTests
 //
-//  Created by Winlentia on 10.08.2022.
+//  Created by Winlentia on 14.08.2022.
 //
 
 import XCTest
-@testable import CaseMovie
 
-class CaseMovieTests: XCTestCase {
+class MainViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,20 +17,22 @@ class CaseMovieTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testMock() throws {
-        let movieDetail: MovieDetail = MovieDetail.loadFromJsonString(string: TestConstants.MockStrings.movieDetail)
-        XCTAssertNotNil(movieDetail)
-    }
-    
-    func testReadFromJsonFile() throws {
-        let url = Bundle(for: CaseMovieTests.self).url(forResource: "PopularMoviesPage1", withExtension: "json")
-        XCTAssertNotNil(url)
-    }
-    
-    func testSearchString() throws {
-        XCTAssertEqual("Sample Search".getSearchQuery(), "Sample+Search")
-        XCTAssertEqual("this is sample search for test".getSearchQuery(), "this+is+sample+search+for+test")
-        XCTAssertNotEqual("Sample search".getSearchQuery(), "Sample Search")
+    func testViewModelVariables() throws {
+        let viewModel = MainViewModel(movieService: MovieMockService(), searchService: SearchMockService())
+        
+        XCTAssertFalse(viewModel.isSearchActive)
+        viewModel.fetchMovies()
+        XCTAssertEqual(viewModel.numberOfSections(), 1)
+        XCTAssertEqual(viewModel.numberOfRowsInSection(section: 0), 20)
+       
+        viewModel.search(query: "harry po")
+        XCTAssertTrue(viewModel.isSearchActive)
+        XCTAssertEqual(viewModel.searchQuery, "harry+po")
+        XCTAssertEqual(viewModel.numberOfSections(), 2)
+        XCTAssertEqual(viewModel.numberOfRowsInSection(section: 0), 20)
+        XCTAssertEqual(viewModel.numberOfRowsInSection(section: 1), 20)
+        
+        
     }
 
     func testExample() throws {

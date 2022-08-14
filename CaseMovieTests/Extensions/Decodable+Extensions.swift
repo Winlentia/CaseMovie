@@ -17,5 +17,15 @@ extension Decodable {
             fatalError("error = \(error)")
         }
     }
+    
+    static func loadFromFile(_ filename: String) -> Self {
+        do {
+            let path = Bundle(for: CaseMovieTests.self).path(forResource: filename, ofType: ".json")!
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            return try SnakeCaseJSONDecoder().decode(Self.self, from: data)
+        } catch {
+            fatalError("Error: \(error)")
+        }
+    }
 }
 

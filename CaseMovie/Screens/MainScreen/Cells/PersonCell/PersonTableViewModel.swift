@@ -35,8 +35,10 @@ struct PersonTableViewModel {
         return popularJobs
     }
     
-    var imageUrl: String {
-        let imagePath = person.profilePath ?? ""
-        return "https://image.tmdb.org/t/p/w200/\(imagePath)"
+    var imageUrl: String? {
+        if let imagePath = person.profilePath {
+            return "https://image.tmdb.org/t/p/w200/\(imagePath)"
+        }
+        return nil
     }
 }
