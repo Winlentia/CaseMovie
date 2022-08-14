@@ -10,7 +10,7 @@ import Alamofire
 
 class PersonMockService: PersonServiceProtocol {
     
-    func getPersonDetail(id: Int, completion:@escaping (Result<PersonDetail,AFError>) -> Void){
+    func getPersonDetail(id: Int, completion:@escaping (Result<PersonDetail, AFError>) -> Void) {
         if id == 117640 {
             let personDetail: PersonDetail = PersonDetail.loadFromFile("personDetail")
             completion(.success(personDetail))

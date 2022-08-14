@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 protocol SearchServiceProtocol {
-    func searchMovies(query: String, completion:@escaping (Result<MoviesResponse,AFError>) -> Void)
-    func searchPersons(query: String, completion:@escaping (Result<SearchPersonResponse,AFError>) -> Void)
+    func searchMovies(query: String, completion:@escaping (Result<MoviesResponse, AFError>) -> Void)
+    func searchPersons(query: String, completion:@escaping (Result<SearchPersonResponse, AFError>) -> Void)
 }
 
 class SearchService: NetworkService, SearchServiceProtocol {
@@ -19,13 +19,11 @@ class SearchService: NetworkService, SearchServiceProtocol {
             completion(result)
         }
     }
-    
+
     func searchPersons(query: String, completion: @escaping (Result<SearchPersonResponse, AFError>) -> Void) {
         self.performRequest(request: SearchActorRequest(query: query)) { result in
             completion(result)
         }
     }
-    
 
-    
 }

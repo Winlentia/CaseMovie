@@ -11,7 +11,7 @@ class MovieDetailViewController: BaseViewController {
 
     let viewModel: MovieDetailViewModel
     
-    init(viewModel: MovieDetailViewModel){
+    init(viewModel: MovieDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -166,8 +166,8 @@ class MovieDetailViewController: BaseViewController {
         }
     }
     
-    @objc fileprivate func imdbButtonAction(){
-        if let imdbUrl = viewModel.imdbUrl,let url = URL(string: imdbUrl) {
+    @objc fileprivate func imdbButtonAction() {
+        if let imdbUrl = viewModel.imdbUrl, let url = URL(string: imdbUrl) {
             UIApplication.shared.open(url)
         }
     }

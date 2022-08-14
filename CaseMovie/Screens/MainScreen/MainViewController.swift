@@ -95,13 +95,13 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if viewModel.isSearchActive {
             
-            switch viewModel.searchData.results[indexPath.section]{
-            case .Movie:
+            switch viewModel.searchData.results[indexPath.section] {
+            case .movie:
                 guard let cell = tableView.dequeueCell(withType: PopularMovieTableViewCell.self, for: indexPath) as? PopularMovieTableViewCell else { return UITableViewCell() }
                 
                 cell.configureCell(viewModel: .init(movie: viewModel.searchData.movieResults[indexPath.row]))
                 return cell
-            case .Person:
+            case .person:
                 guard let cell = tableView.dequeueCell(withType: PersonTableViewCell.self, for: indexPath) as? PersonTableViewCell else { return UITableViewCell() }
                 
                 cell.configureCell(viewModel: .init(actor: viewModel.searchData.personResults[indexPath.row]))
@@ -116,19 +116,18 @@ extension MainViewController: UITableViewDataSource {
         }
     }
     
-    
 }
 
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if viewModel.isSearchActive {
-            switch viewModel.searchData.results[indexPath.section]{
-            case .Person:
+            switch viewModel.searchData.results[indexPath.section] {
+            case .person:
                 if let personId = viewModel.searchData.personResults[indexPath.row].id {
                     self.navigationController?.pushViewController(PersonDetailViewController(viewModel: .init(personId: personId)), animated: true)
                 }
-            case .Movie:
+            case .movie:
                 if let movieId = viewModel.searchData.movieResults[indexPath.row].id {
                     self.navigationController?.pushViewController(MovieDetailViewController(viewModel: .init(movieId: movieId)), animated: true)
                 }
@@ -149,10 +148,10 @@ extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if viewModel.isSearchActive {
-            switch viewModel.searchData.results[section]{
-            case .Person:
+            switch viewModel.searchData.results[section] {
+            case .person:
                 return "Persons"
-            case .Movie:
+            case .movie:
                 return "Movies"
             }
         } else {
@@ -188,5 +187,3 @@ extension MainViewController: UISearchBarDelegate {
         viewModel.search(query: "")
     }
 }
-
-

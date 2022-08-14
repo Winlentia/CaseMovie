@@ -9,19 +9,19 @@ import Foundation
 import Alamofire
 
 class NetworkService {
-    func performRequest<T:Decodable>(request: NetworkRequest, completion:@escaping (Result<T,AFError>) -> Void) {
+    func performRequest<T: Decodable>(request: NetworkRequest, completion:@escaping (Result<T, AFError>) -> Void) {
         if request.blocks {
             LoadingIndicator.sharedInstance.startAnimation()
         }
-        
+
         AF.request(request)
-            .responseDecodable (decoder: SnakeCaseJSONDecoder()) { (response: DataResponse<T, AFError>) in
+            .responseDecodable(decoder: SnakeCaseJSONDecoder()) { (response: DataResponse<T, AFError>) in
                 completion(response.result)
                 if request.blocks {
                     LoadingIndicator.sharedInstance.stopAnimation()
                 }
             }
-        
+
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import Kingfisher
 
 extension UIImageView {
-    func setImage(withUrl: String?){
+    func setImage(withUrl: String?) {
         guard let urlString = withUrl else {
             self.image = UIImage(named: "not-found")
             self.clipsToBounds = true
@@ -18,10 +18,10 @@ extension UIImageView {
         }
         
         let modifier = AnyModifier { request in
-            var r = request
+            var requestConfig = request
             // replace "Access-Token" with the field name you need, it's just an example
-            r.setValue(AppConstants.Config.movieToken, forHTTPHeaderField: "Authorization")
-            return r
+            requestConfig.setValue(AppConstants.Config.movieToken, forHTTPHeaderField: "Authorization")
+            return requestConfig
         }
 
         let url = URL(string: urlString)
@@ -30,7 +30,8 @@ extension UIImageView {
             switch result {
             case .success(let result):
                 self.image = result.image
-            case .failure(_):
+            case .failure(let error):
+                print("Function: \(#function), line: \(#line), error: \(error)") 
                 self.image = UIImage(named: "not-found")
                 self.clipsToBounds = true
                 self.contentMode = .center
@@ -39,5 +40,3 @@ extension UIImageView {
 
     }
 }
-
-

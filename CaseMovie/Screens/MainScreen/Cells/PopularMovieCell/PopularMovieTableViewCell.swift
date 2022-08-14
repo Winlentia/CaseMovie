@@ -11,7 +11,7 @@ import Kingfisher
 
 class PopularMovieTableViewCell: UITableViewCell {
     
-    var viewModel : PopularMovieTableViewModel?
+    var viewModel: PopularMovieTableViewModel?
     
     lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
@@ -97,7 +97,7 @@ class PopularMovieTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCell(viewModel: PopularMovieTableViewModel){
+    func configureCell(viewModel: PopularMovieTableViewModel) {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title
         posterImageView.setImage(withUrl: viewModel.imageUrl)

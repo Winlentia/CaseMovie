@@ -13,7 +13,7 @@ class MovieDetailViewModel {
     let service: MovieServiceProtocol
     var movieData: MovieDetail?
     
-    init(movieId: Int, service: MovieServiceProtocol = MovieService()){
+    init(movieId: Int, service: MovieServiceProtocol = MovieService()) {
         self.service = service
         self.movieId = movieId
         fetchMovieDetail()
@@ -28,8 +28,8 @@ class MovieDetailViewModel {
                 self.movieData = response
                 self.updateUI?()
             case .failure(let error):
-                //TODO: handle error
-                print(error)
+                // TODO: handle error
+                print("Function: \(#function), line: \(#line), error: \(error)")
             }
         }
     }
@@ -51,21 +51,21 @@ class MovieDetailViewModel {
         var subTitle: String = ""
         
         if let releaseDate = Date.from(string: movieData?.releaseDate ?? "") {
-            subTitle = subTitle + releaseDate.getYear() + seperatorString
+            subTitle += releaseDate.getYear() + seperatorString
         }
         
         if let duration = movieData?.runtime {
             let durationTuple = minutesToHoursAndMinutes(duration)
-             subTitle = subTitle + "\(durationTuple.hours)h \(durationTuple.leftMinutes)m" + seperatorString
+             subTitle += "\(durationTuple.hours)h \(durationTuple.leftMinutes)m" + seperatorString
         }
         
         if let genres = movieData?.genres {
-            for (indx,genre) in genres.enumerated() {
-                if indx == genres.count - 1 {
-                    subTitle = subTitle + genre.name
+            for (index, genre) in genres.enumerated() {
+                if index == genres.count - 1 {
+                    subTitle += genre.name
                     break
                 }
-                subTitle = subTitle + genre.name + ", "
+                subTitle += genre.name + ", "
             }
         }
         return subTitle
@@ -75,16 +75,15 @@ class MovieDetailViewModel {
         var scoreAndBudget: String = ""
         
         if let vote = movieData?.voteAverage, let voteCount = movieData?.voteCount {
-            scoreAndBudget = scoreAndBudget + "⭐️ \(vote) (\(voteCount))"
+            scoreAndBudget += "⭐️ \(vote) (\(voteCount))"
         }
         
         if let budget = movieData?.budget, budget != 0 {
-            scoreAndBudget = scoreAndBudget + seperatorString + "💵 \(budget.formattedWithSeparator)"
+            scoreAndBudget += seperatorString + "💵 \(budget.formattedWithSeparator)"
         }
         
         return scoreAndBudget
     }
-    
     
     var imageUrl: String {
         let imagePath = movieData?.posterPath ?? ""
@@ -102,7 +101,7 @@ class MovieDetailViewModel {
         return nil
     }
     
-    private func minutesToHoursAndMinutes(_ minutes: Int) -> (hours: Int , leftMinutes: Int) {
+    private func minutesToHoursAndMinutes(_ minutes: Int) -> (hours: Int, leftMinutes: Int) {
         return (minutes / 60, (minutes % 60))
     }
 }

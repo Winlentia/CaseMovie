@@ -9,13 +9,10 @@ target 'CaseMovie' do
   pod 'Alamofire', '~> 5.5.0'
   pod 'SnapKit', '~> 5.6.0'
   pod 'Kingfisher', '~> 6.3.1'
+  pod 'SwiftLint'
 
   target 'CaseMovieTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'CaseMovieUITests' do
     # Pods for testing
   end
 

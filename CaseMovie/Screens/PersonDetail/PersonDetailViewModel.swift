@@ -13,7 +13,7 @@ class PersonDetailViewModel {
     var personData: PersonDetail?
     var updateUI: (() -> Void)?
     
-    init(personId: Int, service: PersonServiceProtocol = PersonService()){
+    init(personId: Int, service: PersonServiceProtocol = PersonService()) {
         self.service = service
         self.personId = personId
         fetchPersonDetail()
@@ -44,10 +44,10 @@ class PersonDetailViewModel {
     var subTitle: String {
         var subTitle = ""
         if let birth = personData?.birthday, let birthDate = Date.from(string: birth) {
-            subTitle = subTitle + "Born \(birthDate.getDay()) \(birthDate.getMonthName()) \(birthDate.getYear())"
+            subTitle += "Born \(birthDate.getDay()) \(birthDate.getMonthName()) \(birthDate.getYear())"
         }
         if let death = personData?.deathday, let deathDate = Date.from(string: death) {
-            subTitle = subTitle + "\n" + "Died \(deathDate.getDay()) \(deathDate.getMonthName()) \(deathDate.getYear())"
+            subTitle += "\n" + "Died \(deathDate.getDay()) \(deathDate.getMonthName()) \(deathDate.getYear())"
         }
         return subTitle
     }

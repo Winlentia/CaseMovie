@@ -20,6 +20,3 @@ struct SearchPersonResponse: Codable {
     let totalPages: Int?
     let totalResults: Int?
 }
-
-
-

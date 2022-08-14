@@ -32,7 +32,6 @@ class MainViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.numberOfRowsInSection(section: 0), 20)
         XCTAssertEqual(viewModel.numberOfRowsInSection(section: 1), 20)
         
-        
     }
 
     func testExample() throws {

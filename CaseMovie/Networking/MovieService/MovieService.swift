@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 protocol MovieServiceProtocol {
-    func getPopularMovies(pageId: Int, completion:@escaping (Result<MoviesResponse,AFError>) -> Void)
-    func getMovieDetail(id: Int, completion:@escaping (Result<MovieDetail,AFError>) -> Void)
+    func getPopularMovies(pageId: Int, completion:@escaping (Result<MoviesResponse, AFError>) -> Void)
+    func getMovieDetail(id: Int, completion:@escaping (Result<MovieDetail, AFError>) -> Void)
 }
 
 final class MovieService: NetworkService, MovieServiceProtocol {
@@ -19,12 +19,11 @@ final class MovieService: NetworkService, MovieServiceProtocol {
             completion(result)
         }
     }
-    
+
     func getPopularMovies(pageId: Int, completion: @escaping (Result<MoviesResponse, AFError>) -> Void) {
         self.performRequest(request: PopularMoviesRequest(page: pageId)) { result in
             completion(result)
         }
     }
-    
-    
+
 }

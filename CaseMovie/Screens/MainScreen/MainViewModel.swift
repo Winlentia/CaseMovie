@@ -21,7 +21,7 @@ class MainViewModel {
     
     var searchQuery: String = ""
     
-    init(movieService: MovieServiceProtocol = MovieService(), searchService: SearchServiceProtocol = SearchService()){
+    init(movieService: MovieServiceProtocol = MovieService(), searchService: SearchServiceProtocol = SearchService()) {
         self.movieService = movieService
         self.searchService = searchService
     }
@@ -34,7 +34,7 @@ class MainViewModel {
     
 }
 
-//MARK: TableView
+// MARK: TableView
 extension MainViewModel {
     func numberOfSections() -> Int {
         if isSearchActive {
@@ -53,7 +53,7 @@ extension MainViewModel {
     }
 }
 
-//MARK: Service
+// MARK: Service
 extension MainViewModel {
     func fetchMovies() {
         if isPaginationCompleted || isSearchActive {
@@ -72,13 +72,14 @@ extension MainViewModel {
                 }
                 self.reloadCompletion?()
             case .failure(let error):
-                //TODO: handle failure
+                // TODO: handle failure
+                print("Function: \(#function), line: \(#line), error: \(error)")
                 print(error)
             }
         }
     }
     
-    func search(query: String){
+    func search(query: String) {
         searchQuery = query.getSearchQuery()
         
         if searchQuery.isEmpty {
@@ -98,6 +99,7 @@ extension MainViewModel {
                     self.searchData.movieResults = movies
                 }
             case .failure(let error):
+                print("Function: \(#function), line: \(#line), error: \(error)") 
                 dispatchGroup.leave()
             }
         }
@@ -112,6 +114,7 @@ extension MainViewModel {
                     self.searchData.personResults = persons
                 }
             case .failure(let error):
+                print("Function: \(#function), line: \(#line), error: \(error)")
                 dispatchGroup.leave()
             }
         }
@@ -138,10 +141,10 @@ class SearchResult {
     private func reloadSearchResults() {
         results.removeAll()
         if !movieResults.isEmpty {
-            results.append(.Movie)
+            results.append(.movie)
         }
         if !personResults.isEmpty {
-            results.append(.Person)
+            results.append(.person)
         }
     }
 
@@ -149,18 +152,17 @@ class SearchResult {
         return results.count
     }
     
-    func numberOfRowsInSection(section: Int) -> Int{
-        switch results[section]{
-        case.Movie:
+    func numberOfRowsInSection(section: Int) -> Int {
+        switch results[section] {
+        case.movie:
             return movieResults.count
-        case .Person:
+        case .person:
             return personResults.count
         }
     }
 }
 
 enum SearchSectionType {
-    case Movie
-    case Person
+    case movie
+    case person
 }
-

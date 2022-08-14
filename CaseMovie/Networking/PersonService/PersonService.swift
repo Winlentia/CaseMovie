@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 protocol PersonServiceProtocol {
-    func getPersonDetail(id: Int, completion:@escaping (Result<PersonDetail,AFError>) -> Void)
+    func getPersonDetail(id: Int, completion:@escaping (Result<PersonDetail, AFError>) -> Void)
 }
 
 class PersonService: NetworkService, PersonServiceProtocol {
@@ -18,6 +18,5 @@ class PersonService: NetworkService, PersonServiceProtocol {
             completion(result)
         }
     }
-    
     
 }

@@ -85,7 +85,7 @@ class PersonTableViewCell: UITableViewCell {
         }
     }
     
-    func configureCell(viewModel: PersonTableViewModel){
+    func configureCell(viewModel: PersonTableViewModel) {
         self.viewModel = viewModel
         self.posterImageView.setImage(withUrl: viewModel.imageUrl)
         self.titleLabel.text = viewModel.title

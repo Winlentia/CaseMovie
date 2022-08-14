@@ -17,4 +17,3 @@ struct Person: Codable {
     let popularity: Double?
     let profilePath: String?
 }
-

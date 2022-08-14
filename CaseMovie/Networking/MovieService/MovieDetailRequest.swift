@@ -13,7 +13,3 @@ final class MovieDetailRequest: NetworkRequest {
         self.path = "movie/\(id)"
     }
 }
-
-
-
-

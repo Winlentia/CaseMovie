@@ -11,7 +11,7 @@ struct PersonTableViewModel {
     private let person: Person
     private let seperatorString = " | "
     
-    init(actor: Person){
+    init(actor: Person) {
         self.person = actor
     }
     
@@ -23,13 +23,13 @@ struct PersonTableViewModel {
         var popularJobs: String = ""
         if let knownMovies = person.knownFor {
             
-            for (indx,movie) in knownMovies.enumerated() {
+            for (index, movie) in knownMovies.enumerated() {
                 guard let title = movie.title, !title.isEmpty else { continue }
-                if indx == knownMovies.count - 1 {
-                    popularJobs = popularJobs + title
+                if index == knownMovies.count - 1 {
+                    popularJobs += title
                     break
                 }
-                popularJobs = popularJobs + title + seperatorString
+                popularJobs += title + seperatorString
             }
         }
         return popularJobs

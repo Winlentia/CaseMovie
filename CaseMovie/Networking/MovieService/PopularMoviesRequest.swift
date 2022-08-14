@@ -22,5 +22,3 @@ struct MoviesResponse: Codable {
     let totalResults: Int?
 
 }
-
-

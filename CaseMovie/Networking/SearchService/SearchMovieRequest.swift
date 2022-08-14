@@ -12,5 +12,5 @@ class SearchMovieRequest: NetworkRequest {
         super.init()
         self.path = "search/movie?query=\(query)"
     }
-    
+
 }

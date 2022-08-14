@@ -28,7 +28,6 @@ class PersonDetailViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.isImdbButtonHidden, false)
         XCTAssertEqual(viewModel.imdbUrl, "https://www.imdb.com/name/nm0082211/")
         
-        
     }
 
     func testExample() throws {

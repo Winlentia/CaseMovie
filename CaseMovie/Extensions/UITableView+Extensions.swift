@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 extension UITableView {
     
     /**
@@ -55,5 +54,3 @@ extension UITableView {
     }
     
 }
-
-

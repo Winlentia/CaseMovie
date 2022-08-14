@@ -19,7 +19,7 @@ class CaseMovieTests: XCTestCase {
     }
     
     func testMock() throws {
-        let movieDetail: MovieDetail = MovieDetail.loadFromJsonString(string: TestConstants.MockStrings.movieDetail)
+        let movieDetail: MovieDetail = MovieDetail.loadFromFile("movieDetail")
         XCTAssertNotNil(movieDetail)
     }
     
