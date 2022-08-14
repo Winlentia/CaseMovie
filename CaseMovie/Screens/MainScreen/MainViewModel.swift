@@ -81,6 +81,11 @@ extension MainViewModel {
     func search(query: String){
         searchQuery = query.getSearchQuery()
         
+        if searchQuery.isEmpty {
+            self.reloadCompletion?()
+            return
+        }
+        
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()

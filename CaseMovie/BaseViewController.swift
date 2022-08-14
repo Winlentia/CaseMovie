@@ -18,7 +18,5 @@ class BaseViewController: UIViewController {
         super.viewDidAppear(animated)
         print("Active Controller = \(String.init(describing: self))")
     }
-
-
 }
 

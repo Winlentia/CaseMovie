@@ -67,7 +67,12 @@ class MainViewController: BaseViewController {
     fileprivate func bindViewModel() {
         viewModel.reloadCompletion = { [weak self] in
             guard let self = self else { return }
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                if self.viewModel.isSearchActive {
+                    self.tableView.scrollToRow(at: .init(row: 0, section: 0), at: .top, animated: true)
+                }
+            }
         }
     }
 }
@@ -166,19 +171,22 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        
         searchWorkItem?.cancel()
 
         let requestWorkItem = DispatchWorkItem { [weak self] in
             guard let self = self else { return }
             self.viewModel.search(query: searchText)
-            print("requestActivated")
         }
 
         searchWorkItem = requestWorkItem
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300),
                                       execute: requestWorkItem)
-        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.search(query: "")
+    }
 }
 
 
