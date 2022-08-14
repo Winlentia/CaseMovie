@@ -8,8 +8,8 @@
 import Foundation
 
 struct PersonTableViewModel {
-    let person: Person
-    let seperatorString = " | "
+    private let person: Person
+    private let seperatorString = " | "
     
     init(actor: Person){
         self.person = actor
@@ -33,5 +33,10 @@ struct PersonTableViewModel {
             }
         }
         return popularJobs
+    }
+    
+    var imageUrl: String {
+        let imagePath = person.profilePath ?? ""
+        return "https://image.tmdb.org/t/p/w200/\(imagePath)"
     }
 }

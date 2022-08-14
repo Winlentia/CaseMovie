@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class MainViewController: BaseViewController {
     
@@ -26,9 +25,12 @@ class MainViewController: BaseViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .blue
         tableView.contentInsetAdjustmentBehavior = .never
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
         tableView.registerCell(type: PopularMovieTableViewCell.self)
+        tableView.registerCell(type: PersonTableViewCell.self)
         return tableView
     }()
 
@@ -72,29 +74,92 @@ class MainViewController: BaseViewController {
 }
 
 extension MainViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        let numberOfSections = viewModel.numberOfSections()
+        if numberOfSections == 0 {
+            tableView.setEmptyMessage("No Results")
+        } else {
+            tableView.removeEmptyMessage()
+        }
+        return viewModel.numberOfSections()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.popularMovieData.count
+        return viewModel.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueCell(withType: PopularMovieTableViewCell.self, for: indexPath) as? PopularMovieTableViewCell else { return UITableViewCell() }
-        
-        cell.configureCell(viewModel: .init(movie: viewModel.popularMovieData[indexPath.row]))
-        return cell
+        if viewModel.isSearchActive {
+            
+            switch viewModel.searchData.results[indexPath.section]{
+            case .Movie:
+                guard let cell = tableView.dequeueCell(withType: PopularMovieTableViewCell.self, for: indexPath) as? PopularMovieTableViewCell else { return UITableViewCell() }
+                
+                cell.configureCell(viewModel: .init(movie: viewModel.searchData.movieResults[indexPath.row]))
+                return cell
+            case .Person:
+                guard let cell = tableView.dequeueCell(withType: PersonTableViewCell.self, for: indexPath) as? PersonTableViewCell else { return UITableViewCell() }
+                
+                cell.configureCell(viewModel: .init(actor: viewModel.searchData.personResults[indexPath.row]))
+                return cell
+            }
+            
+        } else {
+            guard let cell = tableView.dequeueCell(withType: PopularMovieTableViewCell.self, for: indexPath) as? PopularMovieTableViewCell else { return UITableViewCell() }
+            
+            cell.configureCell(viewModel: .init(movie: viewModel.popularMovieData[indexPath.row]))
+            return cell
+        }
     }
+    
+    
 }
 
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let movieId = viewModel.popularMovieData[indexPath.row].id {
-            self.navigationController?.pushViewController(MovieDetailViewController(viewModel: .init(movieId: movieId)), animated: true)
+        if viewModel.isSearchActive {
+            switch viewModel.searchData.results[indexPath.section]{
+            case .Person:
+                //TODO:
+                print("TODO")
+            case .Movie:
+                if let movieId = viewModel.searchData.movieResults[indexPath.row].id {
+                    self.navigationController?.pushViewController(MovieDetailViewController(viewModel: .init(movieId: movieId)), animated: true)
+                }
+            }
+        } else {
+            if let movieId = viewModel.popularMovieData[indexPath.row].id {
+                self.navigationController?.pushViewController(MovieDetailViewController(viewModel: .init(movieId: movieId)), animated: true)
+            }
         }
+
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row > viewModel.popularMovieData.count - 5 {
             viewModel.fetchMovies()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if viewModel.isSearchActive {
+            switch viewModel.searchData.results[section]{
+            case .Person:
+                return "Persons"
+            case .Movie:
+                return "Movies"
+            }
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if viewModel.isSearchActive {
+            return 35
+        } else {
+            return 0
         }
     }
 }

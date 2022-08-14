@@ -1,17 +1,15 @@
 //
-//  PopularMovieTableViewCell.swift
+//  ActorTableViewCell.swift
 //  CaseMovie
 //
-//  Created by Winlentia on 11.08.2022.
+//  Created by Winlentia on 13.08.2022.
 //
 
 import UIKit
-import SnapKit
-import Kingfisher
 
-class PopularMovieTableViewCell: UITableViewCell {
+class PersonTableViewCell: UITableViewCell {
     
-    var viewModel : PopularMovieTableViewModel?
+    var viewModel: PersonTableViewModel?
     
     lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
@@ -41,16 +39,7 @@ class PopularMovieTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var releaseDate: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.font = .appMainFont
-        contentView.addSubview(label)
-        return label
-    }()
-    
-    lazy var scoreLabel: UILabel = {
+    lazy var popularJobsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -64,7 +53,7 @@ class PopularMovieTableViewCell: UITableViewCell {
         mainStackView.addSubview(imageView)
         return imageView
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -77,9 +66,12 @@ class PopularMovieTableViewCell: UITableViewCell {
         mainStackView.addArrangedSubview(descriptionStackView)
         
         descriptionStackView.addArrangedSubview(titleLabel)
-        descriptionStackView.addArrangedSubview(releaseDate)
-        descriptionStackView.addArrangedSubview(scoreLabel)
+        descriptionStackView.addArrangedSubview(popularJobsLabel)
         
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     fileprivate func setupConstraints() {
@@ -93,16 +85,11 @@ class PopularMovieTableViewCell: UITableViewCell {
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configureCell(viewModel: PopularMovieTableViewModel){
+    func configureCell(viewModel: PersonTableViewModel){
         self.viewModel = viewModel
-        titleLabel.text = viewModel.title
-        posterImageView.setImage(withUrl: viewModel.imageUrl)
-        releaseDate.text = viewModel.releaseDate
-        scoreLabel.text = viewModel.scoreLabel
+        self.posterImageView.setImage(withUrl: viewModel.imageUrl)
+        self.titleLabel.text = viewModel.title
+        self.popularJobsLabel.text = viewModel.popularJobs
     }
 
 }

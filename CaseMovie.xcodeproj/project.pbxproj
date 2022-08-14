@@ -194,13 +194,13 @@
 			path = PopularMovieCell;
 			sourceTree = "<group>";
 		};
-		7880A37028A8095D00609D8B /* ActorCell */ = {
+		7880A37028A8095D00609D8B /* PersonCell */ = {
 			isa = PBXGroup;
 			children = (
 				7880A37128A80A8A00609D8B /* PersonTableViewCell.swift */,
 				7880A37528A80ADD00609D8B /* PersonTableViewModel.swift */,
 			);
-			path = ActorCell;
+			path = PersonCell;
 			sourceTree = "<group>";
 		};
 		7880A37728A816E400609D8B /* LoadingIndicator */ = {
@@ -344,7 +344,7 @@
 		78C5C63C28A594FE005794F6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7880A37028A8095D00609D8B /* ActorCell */,
+				7880A37028A8095D00609D8B /* PersonCell */,
 				7880A36F28A8090C00609D8B /* PopularMovieCell */,
 			);
 			path = Cells;
