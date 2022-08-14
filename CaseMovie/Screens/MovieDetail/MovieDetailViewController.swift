@@ -104,7 +104,6 @@ class MovieDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
         setupUI()
         bindViewModel()
     }

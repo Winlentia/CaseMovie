@@ -96,7 +96,6 @@ class PersonDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
         setupUI()
         bindViewModel()
 

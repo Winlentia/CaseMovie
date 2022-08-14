@@ -38,7 +38,6 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         
         title = "Movie"
-        view.backgroundColor = .yellow
         setupUI()
         bindViewModel()
         viewModel.fetchMovies()
