@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "2341349c-ac7f-4edf-8ae5-b91ecd8996bd",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9872062"
+	},
+	"item": [
+		{
+			"name": "MovieDetail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGFhMWM1N2Y5MTY1ODcxNWMzZGFkNjg2Njk1OGRiNCIsInN1YiI6IjYyZjNmOTg3ZDJmNWI1MDA4MGRmYjUwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c4Z_DdZt_2ju6Edu1-AHz_xtnaj2EXaxBO05cQAevKM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "charset",
+						"value": "utf-8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/550",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"550"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movie popular",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGFhMWM1N2Y5MTY1ODcxNWMzZGFkNjg2Njk1OGRiNCIsInN1YiI6IjYyZjNmOTg3ZDJmNWI1MDA4MGRmYjUwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c4Z_DdZt_2ju6Edu1-AHz_xtnaj2EXaxBO05cQAevKM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "charset",
+						"value": "utf-8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/popular?page=2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"popular"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movieDetail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGFhMWM1N2Y5MTY1ODcxNWMzZGFkNjg2Njk1OGRiNCIsInN1YiI6IjYyZjNmOTg3ZDJmNWI1MDA4MGRmYjUwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c4Z_DdZt_2ju6Edu1-AHz_xtnaj2EXaxBO05cQAevKM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "charset",
+						"value": "utf-8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/361743",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"361743"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchMovie",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGFhMWM1N2Y5MTY1ODcxNWMzZGFkNjg2Njk1OGRiNCIsInN1YiI6IjYyZjNmOTg3ZDJmNWI1MDA4MGRmYjUwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c4Z_DdZt_2ju6Edu1-AHz_xtnaj2EXaxBO05cQAevKM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "charset",
+						"value": "utf-8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/894169",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"894169"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchPeople",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGFhMWM1N2Y5MTY1ODcxNWMzZGFkNjg2Njk1OGRiNCIsInN1YiI6IjYyZjNmOTg3ZDJmNWI1MDA4MGRmYjUwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c4Z_DdZt_2ju6Edu1-AHz_xtnaj2EXaxBO05cQAevKM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "charset",
+						"value": "utf-8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/search/person?query=John",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"search",
+						"person"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "John"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "personDetail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGFhMWM1N2Y5MTY1ODcxNWMzZGFkNjg2Njk1OGRiNCIsInN1YiI6IjYyZjNmOTg3ZDJmNWI1MDA4MGRmYjUwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c4Z_DdZt_2ju6Edu1-AHz_xtnaj2EXaxBO05cQAevKM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "charset",
+						"value": "utf-8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/person/17697",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"person",
+						"17697"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "image",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGFhMWM1N2Y5MTY1ODcxNWMzZGFkNjg2Njk1OGRiNCIsInN1YiI6IjYyZjNmOTg3ZDJmNWI1MDA4MGRmYjUwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c4Z_DdZt_2ju6Edu1-AHz_xtnaj2EXaxBO05cQAevKM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "charset",
+						"value": "utf-8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/person/17697",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"person",
+						"17697"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
